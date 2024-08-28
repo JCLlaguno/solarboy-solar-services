@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300..800&display=swap");
+
+/* =================================== */
+/* comment */
+/* =================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --ff: "Open Sans", sans-serif;
+  --bg-primary: #eee;
+  --fg: #333;
+  --white: #fff;
+  --accent: #2b9348;
+
+  --letter-spacing: 3px;
+  --line-height: 1.5;
+  --transition: all 0.2s ease-in-out;
+}
+
+/* =================================== */
+/* General Styles */
+/* =================================== */
+body {
+  font-family: var(--ff);
+  line-height: var(--line-height);
+}
+img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+.btn {
+  background: none;
+  border: none;
+  display: inline-block;
+}
+li {
+  list-style: none;
+}
+a {
+  display: block;
+  text-decoration: none;
+  color: var(--fg);
+}
+
+/* =================================== */
+/* NAVBAR */
+/* =================================== */
+.nav-header {
+  padding: 0 1rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-header-title {
+  font-size: 2.5rem;
+  color: var(--accent);
+}
+.nav-toggle-btn {
+  display: grid;
+  place-items: center;
+  transition: var(--transition);
+}
+.nav-toggle-btn:hover {
+  color: var(--accent);
+}
+.nav-menu-icon {
+  font-size: 2rem;
+  font-weight: 500;
+}
+/* nav-links */
+.nav-link {
+  padding: 1rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+  transition: var(--transition);
+}
+.nav-link:hover {
+  background: var(--accent);
+  color: var(--white);
+  padding-left: 1.5rem;
+}
+
+/* =================================== */
+/* HERO */
+/* =================================== */
+.hero {
+  min-height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)),
+    url("./img/hero.jpg");
+  display: grid;
+  place-items: center;
+}
+.hero-container {
+  max-width: 400px;
+}
+.hero-container h1 {
+  color: var(--white);
+  letter-spacing: var(--letter-spacing);
+  font-size: 4rem;
+}
+.capitalize {
+  color: var(--accent);
+}

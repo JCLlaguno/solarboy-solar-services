@@ -9,9 +9,17 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
     />
-
+    <!-- swiper -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
     <!-- styles -->
     <link rel="stylesheet" href="./style.css" />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
+    ></script>
     <script defer src="script.js"></script>
   </head>
   <body>
@@ -29,14 +37,21 @@
         <!-- nav links -->
         <ul class="nav-links">
           <li><a href="#" class="nav-link">Home</a></li>
+          <li><a href="#" class="nav-link">About Us</a></li>
           <li><a href="#" class="nav-link">Services</a></li>
-          <li><a href="#" class="nav-link">Packages</a></li>
-          <li><a href="#" class="nav-link">Testimonials</a></li>
+          <li><a href="#" class="nav-link">Projects</a></li>
           <li><a href="#" class="nav-link">Contact</a></li>
+          <li>
+            <a href="#" class="nav-link"
+              ><button type="button" class="btn nav-btn-cta">
+                Quote Now!
+              </button></a
+            >
+          </li>
         </ul>
         <!-- end of nav links -->
         <!-- social links -->
-        <ul class="social-links">
+        <!-- <ul class="social-links">
           <li>
             <a href="#" class="social-link"
               ><svg
@@ -89,7 +104,7 @@
                 /></svg
             ></a>
           </li>
-        </ul>
+        </ul> -->
         <!-- end of social links -->
       </div>
     </nav>
@@ -101,60 +116,490 @@
           <span class="capitalize">S</span>olarBoy Services
         </h1>
         <p class="hero-description">Solar na walang palya!</p>
-        <button class="btn hero-btn-cta">Install Now</button>
+        <button class="btn hero-btn-cta">Quote Now!</button>
       </div>
     </section>
     <!-- end of hero section -->
-    <!-- about section -->
-    <section class="about">
-      <h2 class="about-title section-title">About Us</h2>
-      <div class="about-container div-center">
+    <!-- h-about section -->
+    <section class="h-about">
+      <div class="h-about-container div-center">
         <!-- single content -->
-        <article class="about-content">
-          <div class="about-text">
-            <h3 class="about-content-title">Company Background</h3>
-            <p class="about-description">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
-              optio ex asperiores ea, omnis exercitationem distinctio nihil at
-              facilis eos, recusandae molestiae consequuntur. Laudantium unde
-              qui consectetur itaque blanditiis maxime id incidunt, possimus
-              quam eum suscipit optio tempore enim sunt neque quo cum magni.
-              Dicta a ipsam ullam at. Cupiditate?
-            </p>
+        <article class="h-about-content">
+          <div class="h-about-header">
+            <h3 class="h-about-content-title">About Our Company</h3>
+            <h2 class="h-about-description">
+              We are a leading provider of advanced solar products and offer
+              comprehensive solar system design and installation services.
+            </h2>
+            <button type="button" class="btn btn-read-more">About Us</button>
           </div>
-          <div class="about-img-container">
+          <div class="h-about-img-container">
             <img
-              class="about-img"
-              src="./img/about-img-1.jpg"
-              alt="about-img"
+              class="h-about-img"
+              src="./img/h-about-img-1.jpg"
+              alt="h-about-img"
             />
           </div>
         </article>
         <!-- end of single content -->
+        <!-- content divider -->
+        <div class="content-divider"></div>
         <!-- single content -->
-        <article class="about-content">
-          <div class="about-text">
-            <h3 class="about-content-title">Why go Solar?</h3>
-            <p class="about-description">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
-              optio ex asperiores ea, omnis exercitationem distinctio nihil at
-              facilis eos, recusandae molestiae consequuntur. Laudantium unde
-              qui consectetur itaque blanditiis maxime id incidunt, possimus
-              quam eum suscipit optio tempore enim sunt neque quo cum magni.
-              Dicta a ipsam ullam at. Cupiditate?
+        <article class="h-about-content">
+          <div class="h-about-header">
+            <h3 class="h-about-content-title">Mission</h3>
+            <p class="h-about-description">
+              "Our mission is to revolutionize the way the world harnesses
+              energy by providing innovative, reliable, and affordable solar
+              solutions for all."
             </p>
           </div>
-          <div class="about-img-container">
+          <div class="h-about-img-container">
             <img
-              class="about-img"
-              src="./img/about-img-2.jpg"
-              alt="about-img"
+              class="h-about-img"
+              src="./img/h-about-img-2.jpg"
+              alt="h-about-img"
             />
           </div>
         </article>
         <!-- end of single content -->
       </div>
     </section>
-    <!-- end of about section -->
+    <!-- end of h-about section -->
+
+    <!-- h-services -->
+    <section class="h-services">
+      <!-- h-services container -->
+      <div class="h-services-container div-center">
+        <!-- h-bg -->
+        <div class="h-bg">
+          <!-- h-services-text-bg -->
+          <div class="h-services-header-bg">
+            <!-- h-services text -->
+            <div class="h-services-header section-header">
+              <h3 class="h-services-title">Our Services</h3>
+              <p class="h-services-description">
+                Switch to solar and start saving with our expert, hassle-free
+                installations!
+              </p>
+              <button type="button" class="btn btn-read-more">
+                Our Services
+              </button>
+            </div>
+            <!-- end of h-services text -->
+          </div>
+          <!-- end of h-services-text-bg -->
+          <!-- content divider -->
+          <div class="content-divider"></div>
+          <!-- h-services list -->
+          <div class="h-services-list">
+            <!-- h-single service -->
+            <article class="h-service">
+              <div class="h-service-icon-container">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  xml:space="preserve"
+                  width="1.70666in"
+                  height="1.70666in"
+                  version="1.1"
+                  style="
+                    shape-rendering: geometricPrecision;
+                    text-rendering: geometricPrecision;
+                    image-rendering: optimizeQuality;
+                    fill-rule: evenodd;
+                    clip-rule: evenodd;
+                  "
+                  viewBox="0 0 1706.66 1706.66"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  xmlns:xodm="http://www.corel.com/coreldraw/odm/2003"
+                >
+                  <defs>
+                    <style type="text/css">
+                      .fil0 {
+                        fill: black;
+                      }
+                    </style>
+                  </defs>
+                  <g id="Layer_x0020_1">
+                    <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                    <path
+                      class="fil0"
+                      d="M1685.84 1113.12l-1665.26 -8.11c-12.43,-0.03 -21.96,-11.38 -19.73,-23.64l145.34 -837.17c1.68,-9.65 10.07,-16.65 19.86,-16.65l1346.9 -0.01c9.51,0 17.76,6.71 19.72,16.09l173.03 845.29c2.66,12.85 -7.55,24.2 -19.87,24.2zm-778.28 -44.06l753.67 3.64 -164.64 -804.87 -1313.46 0 -138.34 797.03 862.78 4.2z"
+                    ></path>
+                    <path
+                      class="fil0"
+                      d="M847.83 1109.06c-11.19,0 -20.14,-9.09 -20.14,-20.14l1.54 -841.23c0.02,-26.52 40.31,-26.45 40.28,0l-1.54 841.23c0,11.05 -8.96,20.14 -20.15,20.14z"
+                    ></path>
+                    <path
+                      class="fil0"
+                      d="M1394.48 1104.72c-10.07,0 -18.74,-7.55 -20,-17.76l-102.81 -838.44c-3.3,-26.5 36.78,-31 39.87,-4.89l102.81 838.57c1.49,11.98 -7.82,22.52 -19.86,22.52z"
+                    ></path>
+                    <path
+                      class="fil0"
+                      d="M1122.83 1105.98c-10.49,0 -19.3,-8.11 -20.14,-18.74l-57.77 -839.84c-1.74,-26.38 38.37,-29.49 40.28,-2.8l57.77 839.84c0.76,11.46 -8.25,21.54 -20.15,21.54z"
+                    ></path>
+                    <path
+                      class="fil0"
+                      d="M298.67 1101.79c-12.08,0 -21.49,-10.67 -20,-22.52l102.81 -821.91c3.28,-26.29 43.12,-21.3 39.86,4.89l-102.81 821.77c-1.12,10.21 -9.79,17.76 -19.86,17.76z"
+                    ></path>
+                    <path
+                      class="fil0"
+                      d="M570.31 1103.05c-11.98,0 -20.9,-10.03 -20.14,-21.54l57.77 -823.17c1.74,-26.45 42.04,-23.85 40.28,2.8l-57.77 823.17c-0.84,10.63 -9.65,18.74 -20.14,18.74z"
+                    ></path>
+                    <path
+                      class="fil0"
+                      d="M1554.36 470.79l-1424.67 0c-26.55,0 -26.55,-40.28 0,-40.28l1424.67 0c26.45,0 26.61,40.28 0,40.28z"
+                    ></path>
+                    <path
+                      class="fil0"
+                      d="M1596.74 677.67l-1501.88 0c-26.55,0 -26.55,-40.28 0,-40.28l1501.88 0c26.52,0 26.52,40.28 0,40.28z"
+                    ></path>
+                    <path
+                      class="fil0"
+                      d="M1641.22 894.63l-1583.99 0c-26.52,0 -26.52,-40.28 0,-40.28l1583.99 0c26.48,0 26.48,40.28 0,40.28z"
+                    ></path>
+                    <path
+                      class="fil0"
+                      d="M1161.72 1483.8l-616.87 0c-40,0 -72.59,-32.59 -72.59,-72.6 0,-40 32.59,-72.59 72.59,-72.59l616.87 -0c40,0 72.59,32.59 72.59,72.59 0,40.01 -32.59,72.6 -72.59,72.6zm-616.87 -104.91c-42.5,0 -42.5,64.62 0,64.62l616.87 0c42.5,0 42.5,-64.62 0,-64.62l-616.87 -0z"
+                    ></path>
+                    <path
+                      class="fil0"
+                      d="M964.35 1378.89c-11.05,0 -20.14,-9.09 -20.14,-20.14 0,-116.97 -188.83,-116.97 -188.83,0 0,26.52 -40.28,26.52 -40.28,0 0,-73.3 57.91,-128.55 134.7,-128.55 76.79,0 134.7,55.25 134.7,128.55 0,11.05 -8.95,20.14 -20.14,20.14z"
+                    ></path>
+                    <path
+                      class="fil0"
+                      d="M902.94 1282.09c-11.05,0 -20.14,-9.09 -20.14,-20.14l0 -153.17 -63.5 0 0 152.05c0,26.52 -40.28,26.52 -40.28,0l0 -172.19c0,-11.05 8.95,-20.14 20.14,-20.14l103.79 0c11.05,0 20.15,9.09 20.15,20.14l0 173.31c0,11.05 -9.09,20.14 -20.15,20.14z"
+                    ></path>
+                  </g>
+                </svg>
+              </div>
+              <h3 class="h-service-title">SOLAR PANEL INSTALLATION</h3>
+              <p class="h-service-description">
+                Professional setup and installation of solar panels to convert
+                sunlight into electricity for residential or commercial use.
+              </p>
+            </article>
+            <!-- end of h-single service -->
+            <!-- h-single service -->
+            <article class="h-service">
+              <div class="h-service-icon-container">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+                  <g id="Layer_14" data-name="Layer 14">
+                    <path
+                      d="M58.88,5.12a7.26,7.26,0,0,0-10.26,0L25.54,28.19a1.3,1.3,0,0,0-.33.61L22.78,39.73A1.26,1.26,0,0,0,24,41.25a1.24,1.24,0,0,0,.27,0L35.2,38.79a1.3,1.3,0,0,0,.61-.33L58.88,15.38a7.24,7.24,0,0,0,0-10.26ZM34.3,36.43l-8.65,1.92,1.92-8.65L44.31,13a4.76,4.76,0,0,1,6.74,6.73ZM57.12,13.62l-2.21,2.2a7.22,7.22,0,0,0-6.73-6.73l2.2-2.21a4.79,4.79,0,0,1,6.74,0,4.78,4.78,0,0,1,0,6.74Z"
+                    ></path>
+                    <path
+                      d="M54.91,28.75A1.25,1.25,0,0,0,53.66,30V57.27a1.48,1.48,0,0,1-1.48,1.48H6.73a1.48,1.48,0,0,1-1.48-1.48V22.73a1.48,1.48,0,0,1,1.48-1.48H24a1.25,1.25,0,0,0,0-2.5H6.73a4,4,0,0,0-4,4V57.27a4,4,0,0,0,4,4H52.18a4,4,0,0,0,4-4V30A1.25,1.25,0,0,0,54.91,28.75Z"
+                    ></path>
+                  </g>
+                </svg>
+              </div>
+              <h3 class="h-service-title">SYSTEM DESIGN AND CONSULTATION</h3>
+              <p class="h-service-description">
+                Customized solar energy solutions tailored to meet specific
+                energy needs and optimize efficiency.
+              </p>
+            </article>
+            <!-- end of h-single service -->
+            <!-- h-single service -->
+            <article class="h-service">
+              <div class="h-service-icon-container">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  xml:space="preserve"
+                  width="1.70666in"
+                  height="1.70666in"
+                  version="1.1"
+                  style="
+                    shape-rendering: geometricPrecision;
+                    text-rendering: geometricPrecision;
+                    image-rendering: optimizeQuality;
+                    fill-rule: evenodd;
+                    clip-rule: evenodd;
+                  "
+                  viewBox="0 0 1707 1707"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                >
+                  <defs>
+                    <style type="text/css">
+                      .fil0 {
+                        fill: black;
+                      }
+                    </style>
+                  </defs>
+                  <g id="Layer_x0020_1">
+                    <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                    <g id="_328326312">
+                      <g>
+                        <g>
+                          <path
+                            class="fil0"
+                            d="M253 661c-54,0 -99,-45 -99,-99 0,-10 2,-18 3,-26l-132 0c-13,0 -25,-11 -25,-25l0 -457c0,-13 12,-24 25,-24l457 0c14,0 25,11 25,24l0 174c0,10 -6,18 -16,22 -8,4 -19,3 -26,-4 -10,-8 -21,-14 -35,-14 -29,0 -51,22 -51,50 0,29 24,51 51,51 13,0 25,-5 35,-14 7,-5 17,-7 26,-4 9,4 14,13 14,22l0 172c0,14 -11,25 -25,25l-131 0c2,9 4,18 4,27 1,55 -45,100 -100,100zm-204 -175l148 0c10,0 18,5 23,14 4,8 2,19 -5,26 -8,8 -12,21 -12,35 0,27 23,50 50,50 29,0 51,-23 51,-50 0,-13 -4,-25 -14,-35 -7,-7 -8,-18 -4,-26 4,-9 13,-14 22,-14l147 0 0 -107c-8,3 -18,4 -26,4 -56,0 -100,-44 -100,-100 0,-54 44,-98 100,-98 10,0 18,1 26,4l0 -110 -406 0 0 407z"
+                          ></path>
+                        </g>
+                        <g>
+                          <path
+                            class="fil0"
+                            d="M482 1677l-457 0c-13,0 -25,-11 -25,-25l0 -455c0,-14 12,-25 25,-25l174 0c9,0 18,6 22,14 4,8 3,20 -4,27 -9,8 -13,20 -13,34 0,28 22,50 50,50 29,0 52,-22 52,-50 0,-12 -5,-25 -14,-34 -7,-7 -9,-18 -4,-27 4,-8 12,-14 22,-14l172 0c14,0 25,11 25,25l0 132c8,-3 16,-4 25,-4 55,0 99,44 99,98 0,56 -44,100 -99,100 -9,0 -17,-1 -25,-4l0 132c-2,15 -13,26 -25,26zm-433 -48l408 0 0 -149c0,-10 5,-18 14,-22 8,-4 19,-3 26,4 10,8 21,14 33,14 29,0 52,-24 52,-51 0,-28 -24,-50 -52,-50 -12,0 -23,5 -33,14 -7,7 -18,8 -26,4 -9,-4 -14,-13 -14,-22l0 -149 -107 0c3,9 4,18 4,27 0,54 -44,98 -100,98 -54,0 -98,-44 -98,-98 0,-10 1,-18 3,-27l-110 0 0 407z"
+                          ></path>
+                        </g>
+                        <g>
+                          <path
+                            class="fil0"
+                            d="M1683 1677l-457 0c-13,0 -25,-11 -25,-25l0 -173c0,-10 6,-18 14,-22 9,-5 20,-3 27,4 11,9 22,14 34,14 28,0 50,-23 50,-52 0,-27 -22,-50 -50,-50 -12,0 -23,5 -34,14 -7,6 -17,7 -27,4 -8,-4 -14,-12 -14,-22l0 -172c0,-14 12,-25 25,-25l132 0c-3,-8 -4,-18 -4,-26 0,-54 44,-99 100,-99 54,0 98,45 98,99 0,10 -1,18 -2,26l131 0c14,0 25,11 25,25l0 455c0,14 -11,25 -23,25zm-432 -48l407 0 0 -407 -147 0c-10,0 -18,-5 -22,-14 -5,-8 -3,-19 4,-26 8,-8 12,-21 12,-35 0,-27 -22,-50 -50,-50 -29,0 -51,23 -51,50 0,13 4,25 14,35 7,7 8,18 4,26 -4,9 -13,14 -22,14l-149 0 0 107c9,-3 18,-4 27,-4 54,0 98,44 98,98 0,56 -44,100 -98,100 -10,0 -18,-1 -27,-4l0 110z"
+                          ></path>
+                        </g>
+                        <g>
+                          <path
+                            class="fil0"
+                            d="M1683 534l-172 0c-10,0 -18,-5 -22,-14 -5,-8 -3,-19 4,-26 8,-10 12,-22 12,-35 0,-27 -22,-49 -50,-49 -29,0 -51,22 -51,49 0,13 4,24 14,35 5,7 7,17 4,26 -4,9 -13,14 -22,14l-174 0c-13,0 -25,-11 -25,-25l0 -131c-8,2 -18,4 -26,4 -54,0 -98,-45 -98,-100 0,-54 44,-99 98,-99 10,0 18,2 26,3l0 -132c0,-13 12,-24 25,-24l455 0c14,0 25,11 25,24l0 455c0,14 -11,25 -23,25zm-133 -48l108 0 0 -407 -407 0 0 149c0,10 -5,18 -15,22 -10,4 -19,1 -26,-5 -9,-9 -20,-13 -34,-13 -27,0 -49,24 -49,50 0,29 22,51 49,51 13,0 25,-4 35,-14 7,-7 18,-8 26,-4 9,4 14,13 14,22l0 147 107 0c-3,-8 -4,-18 -4,-26 0,-54 44,-98 100,-98 54,0 98,44 98,98 2,10 0,19 -2,28z"
+                          ></path>
+                        </g>
+                        <g>
+                          <g>
+                            <path
+                              class="fil0"
+                              d="M902 1164l-68 0c-11,0 -21,-7 -24,-18l-19 -79c-11,-4 -21,-8 -32,-15l-65 41c-10,6 -22,4 -31,-3l-48 -48c-9,-8 -10,-21 -4,-29l43 -71c-6,-11 -10,-22 -13,-33l-75 -17c-11,-3 -19,-12 -19,-23l0 -68c0,-11 7,-21 18,-24l80 -19c4,-11 9,-23 14,-32l-40 -65c-6,-10 -4,-23 4,-31l49 -48c8,-9 20,-10 29,-5l71 43c11,-5 22,-9 31,-12l18 -75c3,-11 13,-19 24,-19l68 0c11,0 21,8 24,18l19 80c11,4 22,8 32,14l65 -40c10,-6 22,-4 31,4l48 48c8,9 10,20 4,29l-41 71c5,11 9,22 12,32l75 18c11,3 18,13 18,24l0 68c0,11 -8,20 -18,23l-79 20c-4,11 -8,20 -15,32l41 65c6,9 4,22 -2,30l-52 47c-8,9 -19,10 -29,5l-71 -42c-11,6 -22,10 -33,12l-17 74c-2,10 -12,18 -23,18zm-50 -49l29 0 15 -69c3,-10 10,-17 20,-18 16,-3 32,-10 48,-18 7,-4 17,-4 24,0l65 39 21 -21 -39 -61c-6,-8 -6,-18 0,-26 10,-17 17,-32 21,-46 3,-8 10,-15 18,-18l73 -18 0 -29 -70 -17c-10,-3 -17,-10 -18,-18 -3,-15 -10,-32 -18,-47 -5,-7 -5,-17 0,-24l38 -65 -20 -21 -59 38c-8,4 -18,4 -25,0 -13,-9 -29,-15 -47,-21 -8,-3 -14,-10 -16,-18l-18 -74 -30 0 -16 70c-3,10 -10,16 -18,18 -15,3 -32,10 -47,18 -7,4 -17,4 -24,-2l-65 -40 -21 21 37 61c5,8 5,18 0,25 -8,14 -15,29 -20,47 -3,9 -10,14 -17,17l-75 18 0 32 71 15c10,3 17,10 18,19 3,17 10,32 18,49 4,7 4,17 -1,24l-41 65 21 21 61 -39c8,-6 18,-6 27,0 16,9 31,16 45,21 9,2 16,9 18,18l17 74z"
+                            ></path>
+                          </g>
+                          <g>
+                            <path
+                              class="fil0"
+                              d="M873 968c-70,0 -125,-55 -125,-123 0,-69 55,-125 125,-125 68,0 123,56 123,125 2,68 -54,123 -123,123zm0 -201c-42,0 -77,35 -77,77 0,41 35,75 77,75 41,0 75,-34 75,-75 1,-42 -34,-77 -75,-77z"
+                            ></path>
+                          </g>
+                        </g>
+                        <g>
+                          <g>
+                            <path
+                              class="fil0"
+                              d="M991 286l-311 0c-14,0 -25,-11 -25,-25 0,-14 11,-25 25,-25l312 0c14,0 25,11 25,25 0,14 -12,25 -26,25z"
+                            ></path>
+                          </g>
+                          <g>
+                            <path
+                              class="fil0"
+                              d="M680 286c-6,0 -13,-3 -17,-7 -9,-10 -9,-25 0,-35l67 -66c10,-10 25,-10 35,0 9,10 9,25 0,35l-68 66c-5,6 -11,7 -17,7z"
+                            ></path>
+                          </g>
+                          <g>
+                            <path
+                              class="fil0"
+                              d="M745 351c-5,0 -12,-2 -16,-7l-66 -65c-9,-10 -9,-25 0,-34 10,-10 25,-10 35,0l67 65c9,9 9,25 0,34 -7,5 -13,7 -20,7z"
+                            ></path>
+                          </g>
+                        </g>
+                        <g>
+                          <g>
+                            <path
+                              class="fil0"
+                              d="M296 1057c-14,0 -25,-11 -25,-25l0 -312c0,-14 11,-25 25,-25 14,0 25,11 25,25l0 312c-2,14 -13,25 -25,25z"
+                            ></path>
+                          </g>
+                          <g>
+                            <path
+                              class="fil0"
+                              d="M296 1057c-7,0 -13,-3 -17,-7l-65 -66c-10,-10 -10,-25 0,-35 10,-10 25,-10 35,0l65 67c10,9 10,25 0,34 -6,4 -13,7 -18,7z"
+                            ></path>
+                          </g>
+                          <g>
+                            <path
+                              class="fil0"
+                              d="M296 1057c-6,0 -13,-3 -17,-7 -10,-9 -10,-25 0,-34l67 -67c9,-10 25,-10 34,0 10,10 10,25 0,35l-66 66c-6,4 -13,7 -18,7z"
+                            ></path>
+                          </g>
+                        </g>
+                        <g>
+                          <g>
+                            <path
+                              class="fil0"
+                              d="M1067 1441l-312 0c-14,0 -25,-11 -25,-25 0,-13 11,-25 25,-25l312 0c14,0 25,12 25,25 0,14 -11,25 -25,25z"
+                            ></path>
+                          </g>
+                          <g>
+                            <path
+                              class="fil0"
+                              d="M1002 1507c-6,0 -13,-3 -17,-7 -10,-10 -10,-25 0,-35l67 -67c9,-9 25,-9 34,0 10,10 10,25 0,35l-66 67c-6,4 -13,7 -18,7z"
+                            ></path>
+                          </g>
+                          <g>
+                            <path
+                              class="fil0"
+                              d="M1067 1441c-6,0 -13,-2 -17,-7l-66 -66c-10,-10 -10,-25 0,-35 9,-10 25,-10 34,0l67 67c10,9 10,25 0,34 -6,5 -11,7 -18,7z"
+                            ></path>
+                          </g>
+                        </g>
+                        <g>
+                          <g>
+                            <path
+                              class="fil0"
+                              d="M1451 981c-14,0 -25,-11 -25,-25l0 -311c0,-14 11,-25 25,-25 14,0 25,11 25,25l0 312c-1,14 -12,24 -25,24z"
+                            ></path>
+                          </g>
+                          <g>
+                            <path
+                              class="fil0"
+                              d="M1516 735c-5,0 -12,-2 -16,-6l-67 -67c-10,-10 -10,-25 0,-35 10,-9 25,-9 35,0l66 67c10,10 10,25 0,35 -5,5 -11,6 -18,6z"
+                            ></path>
+                          </g>
+                          <g>
+                            <path
+                              class="fil0"
+                              d="M1385 735c-6,0 -13,-2 -17,-6 -10,-10 -10,-25 0,-35l66 -67c10,-9 25,-9 35,0 10,10 10,25 0,35l-66 67c-6,5 -13,6 -18,6z"
+                            ></path>
+                          </g>
+                        </g>
+                      </g>
+                    </g>
+                  </g>
+                </svg>
+              </div>
+              <h3 class="h-service-title">MAINTENANCE AND REPAIR</h3>
+              <p class="h-service-description">
+                Regular inspection, cleaning, and repair services to ensure the
+                solar system operates at peak performance.
+              </p>
+            </article>
+            <!-- end of h-single service -->
+            <!-- h-single service -->
+            <article class="h-service">
+              <div class="h-service-icon-container">
+                <svg
+                  version="1.1"
+                  id="Layer_1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  x="0px"
+                  y="0px"
+                  viewBox="0 0 100.75 100.749"
+                  style="enable-background: new 0 0 100.75 100.749"
+                  xml:space="preserve"
+                >
+                  <g>
+                    <path
+                      d="M95.9,27.729H83.547v-5.703c0-0.829-0.672-1.5-1.5-1.5h-17.06c-0.828,0-1.5,0.671-1.5,1.5v5.703H37.26v-5.703
+		c0-0.829-0.671-1.5-1.5-1.5H18.7c-0.829,0-1.5,0.671-1.5,1.5v5.703H4.1c-0.829,0-1.5,0.671-1.5,1.5v51.975
+		c0,0.828,0.671,1.5,1.5,1.5h91.8c0.828,0,1.5-0.672,1.5-1.5V29.229C97.4,28.4,96.729,27.729,95.9,27.729z M66.487,23.526h14.06
+		v4.203h-14.06V23.526z M20.2,23.526h14.06v4.203H20.2V23.526z M94.4,79.704H5.6V30.729h88.8V79.704z"
+                    ></path>
+                    <path
+                      d="M18.7,56.717h17.06c0.829,0,1.5-0.672,1.5-1.5s-0.671-1.5-1.5-1.5H18.7c-0.829,0-1.5,0.672-1.5,1.5
+		S17.872,56.717,18.7,56.717z"
+                    ></path>
+                    <path
+                      d="M64.987,56.717h7.029v7.03c0,0.828,0.672,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-7.03h7.03c0.828,0,1.5-0.672,1.5-1.5
+		s-0.672-1.5-1.5-1.5h-7.03v-7.03c0-0.829-0.672-1.5-1.5-1.5s-1.5,0.671-1.5,1.5v7.03h-7.029c-0.828,0-1.5,0.672-1.5,1.5
+		S64.159,56.717,64.987,56.717z"
+                    ></path>
+                  </g>
+                </svg>
+              </div>
+              <h3 class="h-service-title">BATTERY STORAGE SOLUTIONS</h3>
+              <p class="h-service-description">
+                Installation of solar battery systems to store excess energy for
+                use during non-sunny periods or power outages.
+              </p>
+            </article>
+            <!-- end of h-single service -->
+          </div>
+          <!-- end of h-services list -->
+        </div>
+        <!-- end of h-bg -->
+      </div>
+      <!-- end of h-services-container -->
+    </section>
+    <!-- end of h-services -->
+    <!-- h-projects -->
+    <section class="h-projects">
+      <!-- h-projects container -->
+      <div class="h-projects-container div-center">
+        <!-- h-projects header -->
+        <div class="h-projects-header section-header">
+          <h3 class="h-projects-title">Our Projects</h3>
+          <p class="h-projects-description">
+            We install cutting-edge solar systems that save money and protect
+            the planet.
+          </p>
+          <button type="button" class="btn btn-read-more">Our Projects</button>
+        </div>
+        <!-- end of h-projects header -->
+        <!-- Slider main container -->
+        <div class="swiper">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- single slide -->
+            <div class="swiper-slide">
+              <img
+                class="swiper-slide-img"
+                src="./slider-img/1.jpg"
+                alt="slider-img"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                class="swiper-slide-img"
+                src="./slider-img/2.jpg"
+                alt="slider-img"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                class="swiper-slide-img"
+                src="./slider-img/3.jpg"
+                alt="slider-img"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                class="swiper-slide-img"
+                src="./slider-img/4.jpg"
+                alt="slider-img"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                class="swiper-slide-img"
+                src="./slider-img/5.jpg"
+                alt="slider-img"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                class="swiper-slide-img"
+                src="./slider-img/6.jpg"
+                alt="slider-img"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                class="swiper-slide-img"
+                src="./slider-img/7.jpg"
+                alt="slider-img"
+              />
+            </div>
+          </div>
+          <div class="swiper-btns">
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                <path
+                  d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z"
+                />
+              </svg>
+            </div>
+            <div class="swiper-button-next">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                <path
+                  d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <!-- end of Slider main container -->
+      </div>
+      <!-- end of h-projects container -->
+    </section>
+    <!-- end of h-projects -->
   </body>
 </html>

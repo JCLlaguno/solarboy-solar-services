@@ -5,6 +5,7 @@ const navLinks = document.querySelector(".nav-links");
 const slides = document.querySelectorAll(".swiper-slide");
 const previewElements = document.querySelectorAll(".slide-preview");
 const closePreviewBtn = document.querySelector(".btn-close-preview");
+const body = document.body;
 
 // H-Projects Slider
 const swiper = new Swiper(".swiper", {
@@ -48,16 +49,25 @@ slides.forEach((slide, i) => {
     // close preview
     closePreviewBtn.addEventListener("click", () => closePreview(i));
   });
-
-  const showPreview = (index) => {
-    previewElements[index].classList.add("show");
-    previewElements[index].parentElement.classList.add("show-preview");
-  };
-  const closePreview = (index) => {
-    previewElements[index].classList.remove("show");
-    previewElements[index].parentElement.classList.remove("show-preview");
-  };
 });
+
+const showPreview = (index) => {
+  previewElements[index].classList.add("show");
+  previewElements[index].parentElement.classList.add("show-preview");
+  body.style.overflow = "hidden"; // hide scrollbar
+};
+const closePreview = (index) => {
+  previewElements[index].classList.remove("show");
+  previewElements[index].parentElement.classList.remove("show-preview");
+  body.style.overflow = "visible"; // show scrollbar
+};
+
+// swiper.on("slideChange", function (e) {
+//   const activeSlide = e.slides.find((slide) =>
+//     slide.classList.contains("swiper-slide-active")
+//   );
+//   // console.log(activeSlide);
+// });
 
 // Nav Toggle
 navBtn.addEventListener("click", (e) => {

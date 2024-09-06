@@ -2,11 +2,11 @@
 
 const navBtn = document.querySelector(".nav-toggle-btn");
 const navLinks = document.querySelector(".nav-links");
-navBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  navLinks.classList.toggle("show-links");
-});
+const slides = document.querySelectorAll(".swiper-slide");
+const previewElements = document.querySelectorAll(".slide-preview");
+const closePreviewBtn = document.querySelector(".btn-close-preview");
 
+// H-Projects Slider
 const swiper = new Swiper(".swiper", {
   // Optional parameters
   direction: "horizontal",
@@ -14,6 +14,7 @@ const swiper = new Swiper(".swiper", {
   slidesPerView: 1,
   spaceBetween: 20,
   centeredSlides: true,
+  simulateTouch: true,
 
   // Responsive breakpoints
   breakpoints: {
@@ -21,10 +22,45 @@ const swiper = new Swiper(".swiper", {
       slidesPerView: 1.8,
     },
   },
+  autoplay: {
+    delay: 5000,
+  },
 
   // Navigation arrows
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
+});
+
+// Slide Preview
+slides.forEach((slide, i) => {
+  slide.addEventListener("click", () => {
+    // show preview when a slide is clicked
+    showPreview(i);
+
+    // close preview when ESC is pressed
+    window.addEventListener("keydown", (e) => {
+      if (!e.key === "Escape") return;
+      closePreview(i);
+    });
+
+    // close preview
+    closePreviewBtn.addEventListener("click", () => closePreview(i));
+  });
+
+  const showPreview = (index) => {
+    previewElements[index].classList.add("show");
+    previewElements[index].parentElement.classList.add("show-preview");
+  };
+  const closePreview = (index) => {
+    previewElements[index].classList.remove("show");
+    previewElements[index].parentElement.classList.remove("show-preview");
+  };
+});
+
+// Nav Toggle
+navBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  navLinks.classList.toggle("show-links");
 });

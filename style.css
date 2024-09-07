@@ -98,6 +98,10 @@ h3 {
 .section-header {
   margin-bottom: 2.5rem;
 }
+/* .content-title {
+}
+.content-description {
+} */
 
 /* =================================== */
 /* NAVBAR */
@@ -228,7 +232,7 @@ h3 {
 /* =================================== */
 .hero {
   min-height: 100vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.2)),
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
     url("./img/hero.jpg") center/cover no-repeat;
   display: grid;
   place-items: center;
@@ -727,5 +731,81 @@ h3 {
   .social-links {
     flex-flow: row wrap;
     row-gap: 0;
+  }
+}
+
+/* =================================== */
+/* About Us html */
+/* =================================== */
+.about-hero {
+  min-height: 90vh;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
+    url("./img/h-about-img-1.jpg") center/cover no-repeat;
+}
+.about-hero-container {
+  color: var(--bg-primary);
+  display: grid;
+  align-content: center;
+  row-gap: 2rem;
+  max-width: 500px;
+  padding-top: 5rem;
+}
+.about-hero-title {
+  font-weight: 400;
+  font-size: 3rem;
+}
+.about-hero-title-container .about-logo {
+  max-width: 150px;
+}
+.about-hero-description {
+  font-weight: 400;
+  font-size: 1.2rem;
+  align-self: center;
+}
+.about-hero-description .about-business-name {
+  font-weight: 400;
+  color: var(--accent);
+}
+@media screen and (width >= 500px) {
+  .about-hero-container {
+    padding-top: 3rem;
+  }
+}
+@media screen and (width >= 900px) {
+  .about-hero-container {
+    height: 100%;
+    color: var(--bg-primary);
+    display: grid;
+    align-content: center;
+    justify-items: center;
+    grid-template-columns: 1fr 2fr;
+    row-gap: 0;
+    max-width: 900px;
+    padding-top: 3rem;
+  }
+  .about-hero-title-container {
+    align-self: start;
+  }
+  .about-hero-title-container .about-logo {
+    max-width: 200px;
+  }
+  .about-hero-title {
+    margin-bottom: 0;
+    font-size: ;
+  }
+}
+@media screen and (width >= 1200px) {
+  .about-hero-container {
+    max-width: 1200px;
+  }
+  .about-hero-title {
+    justify-self: start;
+    margin-bottom: 0;
+    font-size: 4rem;
+  }
+  .about-hero-description {
+    font-size: 1.4rem;
   }
 }

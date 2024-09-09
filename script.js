@@ -13,19 +13,19 @@ const swiper = new Swiper(".swiper", {
   direction: "horizontal",
   loop: true,
   slidesPerView: 1,
-  spaceBetween: 20,
+  spaceBetween: 16,
   centeredSlides: true,
   simulateTouch: true,
 
   // Responsive breakpoints
   breakpoints: {
     1200: {
-      slidesPerView: 1.8,
+      slidesPerView: 3,
     },
   },
-  autoplay: {
-    delay: 5000,
-  },
+  // autoplay: {
+  //   // delay: 5000,
+  // },
 
   // Navigation arrows
   navigation: {
@@ -36,38 +36,29 @@ const swiper = new Swiper(".swiper", {
 
 // Slide Preview
 slides.forEach((slide, i) => {
-  slide.addEventListener("click", () => {
-    // show preview when a slide is clicked
-    showPreview(i);
-
-    // close preview when ESC is pressed
-    window.addEventListener("keydown", (e) => {
-      if (!e.key === "Escape") return;
-      closePreview(i);
-    });
-
-    // close preview
-    closePreviewBtn.addEventListener("click", () => closePreview(i));
+  // show preview when a slide is clicked
+  slide.addEventListener("click", () => showPreview(i, slide));
+  // close preview
+  closePreviewBtn.addEventListener("click", () => closePreview(i, slide));
+  // close preview when ESC is pressed
+  window.addEventListener("keydown", (e) => {
+    if (!e.key === "Escape") return;
+    closePreview(i, slide);
   });
 });
 
-const showPreview = (index) => {
+const showPreview = (index, slide) => {
   previewElements[index].classList.add("show");
   previewElements[index].parentElement.classList.add("show-preview");
   body.style.overflow = "hidden"; // hide scrollbar
+  // slide.style.overflow = "visible";
 };
-const closePreview = (index) => {
+const closePreview = (index, slide) => {
   previewElements[index].classList.remove("show");
   previewElements[index].parentElement.classList.remove("show-preview");
   body.style.overflow = "visible"; // show scrollbar
+  // slide.style.overflow = "hidden";
 };
-
-// swiper.on("slideChange", function (e) {
-//   const activeSlide = e.slides.find((slide) =>
-//     slide.classList.contains("swiper-slide-active")
-//   );
-//   // console.log(activeSlide);
-// });
 
 // Nav Toggle
 navBtn.addEventListener("click", (e) => {

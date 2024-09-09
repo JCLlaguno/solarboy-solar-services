@@ -15,7 +15,7 @@
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
     <!-- styles -->
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./css/index.css" />
     <script
       defer
       src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
@@ -62,8 +62,16 @@
         <p class="hero-description">Solar na walang palya!</p>
         <button class="btn hero-btn-cta">Quote Now!</button>
       </div>
+      <!-- sub-hero -->
+      <div class="h-sub-hero-container">
+        <h2 class="h-sub-hero-description content-description">
+          "Our expert solar installers deliver precision, efficiency, and
+          savings for a brighter tomorrow!"
+        </h2>
+      </div>
     </section>
     <!-- end of hero section -->
+
     <!-- h-about section -->
     <section class="h-about">
       <div class="h-about-container div-center">
@@ -77,34 +85,35 @@
             </h2>
             <button type="button" class="btn btn-read-more">About Us</button>
           </div>
-          <div class="h-about-img-container">
-            <img
-              class="h-about-img"
-              src="./img/h-about-img-1.jpg"
-              alt="h-about-img"
-            />
-            <img src="./img/green.jpg" alt="" class="h-about-sub-img" />
-          </div>
-        </article>
-        <!-- end of single content -->
-        <!-- content divider -->
-        <div class="content-divider"></div>
-        <!-- single content -->
-        <article class="h-about-content">
-          <div class="h-about-header">
-            <h3 class="h-about-content-title">Mission</h3>
-            <p class="h-about-description">
-              "Our mission is to revolutionize the way the world harnesses
-              energy by providing innovative, reliable, and affordable solar
-              solutions for all."
-            </p>
-          </div>
-          <div class="h-about-img-container">
-            <img
-              class="h-about-img"
-              src="./img/h-about-img-2.jpg"
-              alt="h-about-img"
-            />
+          <div class="h-about-imgs-container">
+            <div class="h-about-img-container">
+              <img
+                class="h-about-img"
+                src="./img/h-about-img-1.jpg"
+                alt="h-about-img"
+              />
+            </div>
+            <div class="h-about-img-container">
+              <img
+                class="h-about-img"
+                src="./img/h-about-img-2.jpg"
+                alt="h-about-img"
+              />
+            </div>
+            <div class="h-about-img-container">
+              <img
+                class="h-about-img"
+                src="./img/h-about-img-3.jpg"
+                alt="h-about-img"
+              />
+            </div>
+            <div class="h-about-img-container">
+              <img
+                class="h-about-img"
+                src="./img/h-about-img-4.jpg"
+                alt="h-about-img"
+              />
+            </div>
           </div>
         </article>
         <!-- end of single content -->
@@ -468,146 +477,78 @@
           <button type="button" class="btn btn-read-more">Our Projects</button>
         </div>
         <!-- end of h-projects header -->
+
         <!-- Slider main container -->
         <div class="swiper">
           <!-- Additional required wrapper -->
           <div class="swiper-wrapper">
             <!-- single slide -->
             <div class="swiper-slide">
-              <img
-                class="swiper-slide-img"
-                src="./slider-img/1.jpg"
-                alt="slider-img"
-              />
-              <!-- fullscreen icon overlay -->
-              <div class="fullscreen-icon-overlay">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 -960 960 960"
-                >
-                  <path
-                    d="M160-160v-176.92h40V-200h136.92v40H160Zm463.85 0v-40h136.92v-136.92h40V-160H623.85ZM160-623.08V-800h176.92v40H200v136.92h-40Zm600.77 0V-760H623.85v-40h176.92v176.92h-40Z"
-                  />
-                </svg>
+              <div class="swiper-zoom-container">
+                <img
+                  class="swiper-slide-img"
+                  src="./slider-img/1.jpg"
+                  alt="slider-img"
+                />
               </div>
-              <!-- end of fullscreen icon overlay -->
             </div>
             <div class="swiper-slide">
-              <img
-                class="swiper-slide-img"
-                src="./slider-img/2.jpg"
-                alt="slider-img"
-              />
-              <!-- fullscreen icon overlay -->
-              <div class="fullscreen-icon-overlay">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 -960 960 960"
-                >
-                  <path
-                    d="M160-160v-176.92h40V-200h136.92v40H160Zm463.85 0v-40h136.92v-136.92h40V-160H623.85ZM160-623.08V-800h176.92v40H200v136.92h-40Zm600.77 0V-760H623.85v-40h176.92v176.92h-40Z"
-                  />
-                </svg>
+              <div class="swiper-zoom-container">
+                <img
+                  class="swiper-slide-img"
+                  src="./slider-img/2.jpg"
+                  alt="slider-img"
+                />
               </div>
-              <!-- end of fullscreen icon overlay -->
             </div>
             <div class="swiper-slide">
-              <img
-                class="swiper-slide-img"
-                src="./slider-img/3.jpg"
-                alt="slider-img"
-              />
-              <!-- fullscreen icon overlay -->
-              <div class="fullscreen-icon-overlay">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 -960 960 960"
-                >
-                  <path
-                    d="M160-160v-176.92h40V-200h136.92v40H160Zm463.85 0v-40h136.92v-136.92h40V-160H623.85ZM160-623.08V-800h176.92v40H200v136.92h-40Zm600.77 0V-760H623.85v-40h176.92v176.92h-40Z"
-                  />
-                </svg>
+              <div class="swiper-zoom-container">
+                <img
+                  class="swiper-slide-img"
+                  src="./slider-img/3.jpg"
+                  alt="slider-img"
+                />
               </div>
-              <!-- end of fullscreen icon overlay -->
             </div>
             <div class="swiper-slide">
-              <img
-                class="swiper-slide-img"
-                src="./slider-img/4.jpg"
-                alt="slider-img"
-              />
-              <!-- fullscreen icon overlay -->
-              <div class="fullscreen-icon-overlay">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 -960 960 960"
-                >
-                  <path
-                    d="M160-160v-176.92h40V-200h136.92v40H160Zm463.85 0v-40h136.92v-136.92h40V-160H623.85ZM160-623.08V-800h176.92v40H200v136.92h-40Zm600.77 0V-760H623.85v-40h176.92v176.92h-40Z"
-                  />
-                </svg>
+              <div class="swiper-zoom-container">
+                <img
+                  class="swiper-slide-img"
+                  src="./slider-img/4.jpg"
+                  alt="slider-img"
+                />
               </div>
-              <!-- end of fullscreen icon overlay -->
             </div>
             <div class="swiper-slide">
-              <img
-                class="swiper-slide-img"
-                src="./slider-img/5.jpg"
-                alt="slider-img"
-              />
-              <!-- fullscreen icon overlay -->
-              <div class="fullscreen-icon-overlay">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 -960 960 960"
-                >
-                  <path
-                    d="M160-160v-176.92h40V-200h136.92v40H160Zm463.85 0v-40h136.92v-136.92h40V-160H623.85ZM160-623.08V-800h176.92v40H200v136.92h-40Zm600.77 0V-760H623.85v-40h176.92v176.92h-40Z"
-                  />
-                </svg>
+              <div class="swiper-zoom-container">
+                <img
+                  class="swiper-slide-img"
+                  src="./slider-img/5.jpg"
+                  alt="slider-img"
+                />
               </div>
-              <!-- end of fullscreen icon overlay -->
             </div>
             <div class="swiper-slide">
-              <img
-                class="swiper-slide-img"
-                src="./slider-img/6.jpg"
-                alt="slider-img"
-              />
-              <!-- fullscreen icon overlay -->
-              <div class="fullscreen-icon-overlay">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 -960 960 960"
-                >
-                  <path
-                    d="M160-160v-176.92h40V-200h136.92v40H160Zm463.85 0v-40h136.92v-136.92h40V-160H623.85ZM160-623.08V-800h176.92v40H200v136.92h-40Zm600.77 0V-760H623.85v-40h176.92v176.92h-40Z"
-                  />
-                </svg>
+              <div class="swiper-zoom-container">
+                <img
+                  class="swiper-slide-img"
+                  src="./slider-img/6.jpg"
+                  alt="slider-img"
+                />
               </div>
-              <!-- end of fullscreen icon overlay -->
             </div>
             <div class="swiper-slide">
-              <img
-                class="swiper-slide-img"
-                src="./slider-img/7.jpg"
-                alt="slider-img"
-              />
-              <!-- fullscreen icon overlay -->
-              <div class="fullscreen-icon-overlay">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 -960 960 960"
-                >
-                  <path
-                    d="M160-160v-176.92h40V-200h136.92v40H160Zm463.85 0v-40h136.92v-136.92h40V-160H623.85ZM160-623.08V-800h176.92v40H200v136.92h-40Zm600.77 0V-760H623.85v-40h176.92v176.92h-40Z"
-                  />
-                </svg>
+              <div class="swiper-zoom-container">
+                <img
+                  class="swiper-slide-img"
+                  src="./slider-img/7.jpg"
+                  alt="slider-img"
+                />
               </div>
-              <!-- end of fullscreen icon overlay -->
             </div>
           </div>
           <!-- end of wrapper -->
+
           <!-- navigation buttons -->
           <div class="swiper-button-prev">
             <svg
@@ -627,22 +568,6 @@
               <path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z" />
             </svg>
           </div>
-          <!-- <div class="swiper-custom-nav">
-            <svg
-              class="btn-prev"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 -960 960 960"
-            >
-              <path d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z" />
-            </svg>
-            <svg
-              class="btn-next"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 -960 960 960"
-            >
-              <path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z" />
-            </svg>
-          </div> -->
           <!-- end of  navigation buttons -->
         </div>
         <!-- end of Slider main container -->

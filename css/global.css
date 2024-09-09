@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300..800&display=swap");
+/* =================================== */
+/* GLOBAL CSS */
+/* =================================== */
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --ff: "Open Sans", sans-serif;
+  --bg-primary: #faf9f6;
+  --fg: #333;
+  --fg-2: #444;
+  --white: #fff;
+  --accent: #15616d;
+  --accent: #2b9348;
+  --scrollbar-color: #ccc;
+
+  --spacing: 3px;
+  --content-spacing: 1px;
+  --line-height: 1.5;
+  --transition: all 0.2s ease-in-out;
+  --radius: 2px;
+}
+
+/* =================================== */
+/* General Styles */
+/* =================================== */
+body {
+  font-family: var(--ff);
+  line-height: var(--line-height);
+}
+body::-webkit-scrollbar {
+  background: transparent;
+}
+body::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-color);
+}
+img:not(.nav-logo) {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+.btn {
+  background: none;
+  border: none;
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--bg-primary);
+  letter-spacing: var(--spacing);
+  background: var(--accent);
+  padding: 0.7rem 1rem;
+  border-radius: var(--radius);
+  margin-top: 1rem;
+  transition: var(--transition);
+  font-family: var(--ff);
+}
+li {
+  list-style: none;
+}
+a {
+  display: block;
+  text-decoration: none;
+  color: var(--fg);
+}
+h1 {
+  font-size: 4rem;
+}
+h2 {
+  font-size: 2.5rem;
+}
+h3 {
+  color: var(--fg-2);
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: var(--content-spacing);
+}
+.div-center {
+  width: 90vw;
+  padding: 3rem 0;
+  margin: 0 auto;
+}
+@media screen and (width >= 900px) {
+  .div-center {
+    max-width: 9999px;
+  }
+}
+.content-divider {
+  background: var(--fg);
+  height: 2px;
+  width: 100%;
+}
+.section-header {
+  margin-bottom: 2.5rem;
+}
+/* .content-title {
+}
+*/
+.content-description {
+  font-weight: 500;
+  font-size: 2rem;
+  color: var(--fg);
+}

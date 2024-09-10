@@ -65,3 +65,40 @@ navBtn.addEventListener("click", (e) => {
   e.preventDefault();
   navLinks.classList.toggle("show-links");
 });
+
+// LOCATION MAP
+// initialize the map on the "map" div with a given center and zoom
+const lat = 13.2548727;
+const lng = 123.6655128;
+const map = L.map("map", { scrollWheelZoom: false }).setView([lat, lng], 12);
+const markerIcon = L.icon({
+  iconUrl: "./img/marker.svg",
+  iconSize: [40, 40], // size of the icon
+  // iconAnchor: [15, 42], // half of width + height
+});
+const marker = new L.Marker([lat, lng], { icon: markerIcon });
+
+L.tileLayer("http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}", {
+  maxZoom: 20,
+  subdomains: ["mt0", "mt1", "mt2", "mt3"],
+}).addTo(map);
+
+marker
+  .bindTooltip("SolarBoy", {
+    permanent: true,
+    direction: "top",
+    className: "loc-label",
+    offset: [5, -25],
+  })
+  .addTo(map);
+
+document
+  .querySelector("#map")
+  .addEventListener("wheel", preventScroll, { passive: false });
+
+function preventScroll(e) {
+  e.preventDefault();
+  e.stopPropagation();
+
+  return false;
+}

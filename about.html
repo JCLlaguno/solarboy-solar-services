@@ -4,6 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Solar Boy Solar Services || About</title>
+
+    <!-- map -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <script
+      defer
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+
     <!-- icons -->
     <link
       rel="stylesheet"
@@ -86,11 +101,13 @@
             <!-- <button type="button" class="btn btn-read-more">About Us</button> -->
           </div>
           <div class="about-img-container">
+            <!-- <div class="img-wrapper"> -->
             <img
               class="about-img"
               src="./img/h-about-img-1.jpg"
               alt="about-img"
             />
+            <!-- </div> -->
           </div>
         </article>
         <!-- end of single content -->
@@ -107,11 +124,13 @@
             </p>
           </div>
           <div class="about-img-container">
+            <!-- <div class="img-wrapper"> -->
             <img
               class="about-img"
               src="./img/h-about-img-2.jpg"
               alt="about-img"
             />
+            <!-- </div> -->
           </div>
         </article>
         <!-- end of single content -->
@@ -132,11 +151,13 @@
             <!-- <button type="button" class="btn btn-read-more">About Us</button> -->
           </div>
           <div class="about-img-container">
+            <!-- <div class="img-wrapper"> -->
             <img
               class="about-img"
               src="./img/h-about-img-3.jpg"
               alt="about-img"
             />
+            <!-- </div> -->
           </div>
         </article>
         <!-- end of single content -->
@@ -157,11 +178,13 @@
             </p>
           </div>
           <div class="about-img-container">
+            <!-- <div class="img-wrapper"> -->
             <img
               class="about-img"
               src="./img/h-about-img-4.jpg"
               alt="about-img"
             />
+            <!-- </div> -->
           </div>
         </article>
         <!-- end of single content -->
@@ -187,19 +210,9 @@
           </p>
         </div>
         <!-- map -->
-        <div class="about-map">
-          <iframe
-            class="map"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3885.1233436717202!2d123.67853017575739!3d13.154618910837906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a106a53dad7763%3A0x65eb610fdbec6953!2sLacag%20Elementary%20School!5e0!3m2!1sen!2sph!4v1725881714150!5m2!1sen!2sph"
-            style="border: 0"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
-        </div>
-        <!-- end of map -->
+
+        <div id="map"></div>
       </div>
-      .
     </section>
     <!-- end of google map -->
 

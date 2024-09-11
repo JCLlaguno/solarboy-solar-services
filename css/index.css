@@ -106,7 +106,7 @@
 .h-about-container {
   min-height: 100vh;
   display: grid;
-  justify-items: center;
+  align-items: center;
 }
 .h-about-content {
   margin: 2.5rem 0;
@@ -130,36 +130,23 @@
   gap: 1rem;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  position: relative;
 }
 .h-about-img-container {
-  max-width: 500px;
+  aspect-ratio: 1/1;
   height: auto;
   border: 5px solid var(--fg-2);
   transition: var(--transition);
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 .h-about-img-container:hover {
   border-color: var(--accent);
 }
 .h-about-img-container:hover .h-about-img {
-  transform: scale(1.1);
+  /* transform: scale(1.1); */
 }
 .h-about-img {
   height: 100%;
   transition: var(--transition);
-}
-.btn-read-more {
-  font-size: 1rem;
-  font-weight: 600;
-  padding: 0.6rem 0.6rem;
-  background: transparent;
-  color: var(--fg);
-  border: 2px solid var(--fg);
-}
-.btn-read-more:hover {
-  color: var(--bg-primary);
-  background: var(--accent);
 }
 @media screen and (width >= 600px) {
   .h-about-content {
@@ -170,7 +157,7 @@
 }
 @media screen and (width >= 1150px) {
   .h-about-content {
-    max-width: 100%;
+    max-width: 90%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 1rem;
@@ -180,19 +167,14 @@
     align-self: center;
     justify-self: center;
   }
+  .h-about-img-container {
+    max-width: 250px;
+  }
   .h-about-imgs-container {
     justify-self: center;
     align-self: center;
     margin-top: 0;
     margin-bottom: 0;
-  }
-  .h-about-img {
-    /* height: 100%; */
-    position: relative;
-  }
-  .btn-read-more {
-    font-size: 1.2rem;
-    padding: 0.7rem 1rem;
   }
 }
 
@@ -276,16 +258,13 @@
 /* =================================== */
 .h-projects {
   background: var(--bg-primary);
-  position: relative;
-}
-.swiper {
 }
 .swiper-slide {
   height: auto;
   position: relative;
   border: 5px solid var(--fg-2);
   transition: var(--transition);
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 .swiper-slide:hover {
   border-color: var(--accent);

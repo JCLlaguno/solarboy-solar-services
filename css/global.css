@@ -49,15 +49,27 @@ img:not(.nav-logo) {
   border: none;
   display: inline-block;
   font-size: 1rem;
-  font-weight: 500;
-  color: var(--bg-primary);
+  font-weight: 600;
   letter-spacing: var(--spacing);
-  background: var(--accent);
+  background: transparent;
   padding: 0.7rem 1rem;
   border-radius: var(--radius);
   margin-top: 1rem;
   transition: var(--transition);
   font-family: var(--ff);
+  border: 2px solid var(--fg);
+  color: var(--fg);
+}
+.btn:hover {
+  color: var(--bg-primary);
+  background: var(--accent);
+}
+
+@media screen and(width >= 1150px) {
+  .btn-read-more {
+    font-size: 1.2rem;
+    padding: 0.7rem 1rem;
+  }
 }
 li {
   list-style: none;
@@ -104,4 +116,7 @@ h3 {
   font-weight: 500;
   font-size: 2rem;
   color: var(--fg);
+}
+.active-link {
+  color: var(--accent);
 }

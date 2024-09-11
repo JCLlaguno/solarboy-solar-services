@@ -36,12 +36,8 @@
   font-weight: 400;
   font-size: 3rem;
 }
-.about-hero-container .about-logo {
+.about-hero-container .business-logo {
   max-width: 150px;
-}
-.about-hero-description .about-business-name {
-  font-weight: 400;
-  color: var(--accent);
 }
 @media screen and (width >= 500px) {
   .about-hero-title {
@@ -67,7 +63,7 @@
   .about-hero-title-container {
     align-self: start;
   }
-  .about-hero-title-container .about-logo {
+  .about-hero-title-container .business-logo {
     max-width: 200px;
   }
   .about-hero-title {
@@ -94,6 +90,9 @@
 /* =================================== */
 /* ABOUT US */
 /* =================================== */
+.about {
+  background: var(--bg-primary);
+}
 .about-container {
   min-height: 100vh;
   justify-items: center;
@@ -223,7 +222,7 @@
 
 /* location map */
 .location {
-  background: var(--bg-primary);
+  background: transparent;
 }
 .about-map-container {
   display: grid;
@@ -250,32 +249,38 @@
 .about-map-description {
   letter-spacing: var(--letter-spacing);
 }
-#map {
+.map {
   width: 90vw;
   aspect-ratio: 16 / 10;
-  border: 5px solid var(--fg) !important;
+  border: 5px solid var(--fg);
   transition: var(--transition);
+  z-index: 1;
 }
-#map:hover {
-  border-color: var(--accent) !important;
+.map:hover {
+  border-color: var(--accent);
 }
 .leaflet-control-attribution.leaflet-control {
   display: none;
 }
-.leaflet-tooltip.loc-label {
+/* .leaflet-tooltip.loc-label {
   background: var(--white);
   border: none;
   box-shadow: none;
   font-size: 1rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--accent);
 }
 .leaflet-tooltip:before {
   border-left-color: var(--white);
+} */
+.leaflet-popup-content {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--accent);
 }
 
 @media screen and (width >= 600px) {
-  #map {
+  .map {
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
@@ -289,8 +294,9 @@
   .about-map-title-container {
     max-width: 500px;
     justify-self: center;
+    margin-bottom: 0;
   }
-  #map {
+  .map {
     max-width: 650px;
     transition: var(--transition);
     justify-self: start;

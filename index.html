@@ -4,6 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Solar Boy Solar Services</title>
+    <!-- map -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <script
+      defer
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
     <!-- icons -->
     <link
       rel="stylesheet"
@@ -36,7 +49,7 @@
         <!-- end of nav header -->
         <!-- nav links -->
         <ul class="nav-links">
-          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="index.html" class="nav-link active-link">Home</a></li>
           <li><a href="about.html" class="nav-link">About Us</a></li>
           <li><a href="services.html" class="nav-link">Services</a></li>
           <li><a href="projects.html" class="nav-link">Projects</a></li>
@@ -83,7 +96,7 @@
               We are a leading provider of advanced solar products and offer
               comprehensive solar system design and installation services.
             </h2>
-            <button type="button" class="btn btn-read-more">About Us</button>
+            <button type="button" class="btn">About Us</button>
           </div>
           <div class="h-about-imgs-container">
             <div class="h-about-img-container">
@@ -136,9 +149,7 @@
                 Switch to solar and start saving with our expert, hassle-free
                 installations!
               </p>
-              <button type="button" class="btn btn-read-more">
-                Our Services
-              </button>
+              <button type="button" class="btn">Our Services</button>
             </div>
             <!-- end of h-services text -->
           </div>
@@ -463,6 +474,7 @@
       <!-- end of h-services-container -->
     </section>
     <!-- end of h-services -->
+
     <!-- h-projects -->
     <section class="h-projects">
       <!-- h-projects container -->
@@ -474,7 +486,7 @@
             We install cutting-edge solar systems that save money and protect
             the planet.
           </p>
-          <button type="button" class="btn btn-read-more">Our Projects</button>
+          <button type="button" class="btn btn-details">Our Projects</button>
         </div>
         <!-- end of h-projects header -->
 

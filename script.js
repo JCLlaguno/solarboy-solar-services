@@ -37,27 +37,25 @@ const swiper = new Swiper(".swiper", {
 // Slide Preview
 slides.forEach((slide, i) => {
   // show preview when a slide is clicked
-  slide.addEventListener("click", () => showPreview(i, slide));
+  slide.addEventListener("click", () => showPreview(i));
   // close preview
-  closePreviewBtn.addEventListener("click", () => closePreview(i, slide));
+  closePreviewBtn.addEventListener("click", () => closePreview(i));
   // close preview when ESC is pressed
   window.addEventListener("keydown", (e) => {
     if (!e.key === "Escape") return;
-    closePreview(i, slide);
+    closePreview(i);
   });
 });
 
-const showPreview = (index, slide) => {
+const showPreview = (index) => {
   previewElements[index].classList.add("show");
   previewElements[index].parentElement.classList.add("show-preview");
   body.style.overflow = "hidden"; // hide scrollbar
-  // slide.style.overflow = "visible";
 };
-const closePreview = (index, slide) => {
+const closePreview = (index) => {
   previewElements[index].classList.remove("show");
   previewElements[index].parentElement.classList.remove("show-preview");
   body.style.overflow = "visible"; // show scrollbar
-  // slide.style.overflow = "hidden";
 };
 
 // Nav Toggle
@@ -68,13 +66,17 @@ navBtn.addEventListener("click", (e) => {
 
 // LOCATION MAP
 const loadMap = () => {
+  if (!L) return;
   if (!document.getElementById("map")) return;
+
   const coords = [13.2548727, 123.6655128];
+
   const map = L.map("map", {
     scrollWheelZoom: false,
     zoom: 12,
     center: coords,
   });
+  // .setView(coords, 12);
   const markerIcon = L.icon({
     iconUrl: "./img/marker.svg",
     iconSize: [40, 40],
@@ -94,3 +96,90 @@ const loadMap = () => {
   }).addTo(map);
 };
 loadMap();
+
+// services Load More toggle
+const mobileLoadMore = () => {
+  const servicesList = document.querySelectorAll(".service");
+  const loadMoreBtn = document.querySelector(".services-load-more-btn");
+  const showLessBtn = document.querySelector(".services-show-less-btn");
+  const servicesLength = servicesList.length;
+  console.log(servicesLength);
+
+  let numCards = 4;
+
+  // MAIN function to show services cards
+  const showServices = (servicesList, numCards) => {
+    servicesList.forEach((service, i) => {
+      // if current service is less than or equal to numCards display it
+      // display it
+      service.style.display = i <= numCards - 1 ? "grid" : "none";
+    });
+  };
+
+  // initial page load
+  // if total cards number = 4, hide show less button
+  if (!showLessBtn) return;
+  if (numCards === 4) showLessBtn.style.display = "none";
+
+  // load 4 services
+  showServices(servicesList, numCards);
+
+  // when loadMoreBtn pressed = load more services
+  loadMoreBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    // increase numCards value every time loadMoreBtn is pressed
+    // if numCards is less than total length of services, add 4 to current numCard value. otherwise,
+    // set numCard value to total length of services (servicesLength).
+    numCards = numCards < servicesLength ? numCards + 4 : servicesLength;
+
+    // update services cards
+    showServices(servicesList, numCards);
+
+    // if numCard is equal to total length of services, hide load more button
+    if (numCards === servicesLength) loadMoreBtn.style.display = "none";
+    if (numCards > 4) showLessBtn.style.display = "block";
+  });
+
+  // when showLessBtn is pressed = hide services
+  showLessBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    // reduce numCards value by every time showLessBtn is pressed
+    // if numCards is greater than 4, subtract 4 to current numCard value.
+    // otherwise, set numCard value to 4.
+    numCards = numCards > 4 ? numCards - 4 : 4;
+
+    // update services cards
+    showServices(servicesList, numCards);
+
+    // show loadMoreBtn
+    loadMoreBtn.style.display = "block";
+    // hide showLessBtn if numCards = 4
+    if (numCards === 4) showLessBtn.style.display = "none";
+  });
+};
+
+mobileLoadMore();
+
+// // Create a MediaQueryList object
+// const mediaquery = window.matchMedia("(max-width: 900px)");
+
+// // listener function
+// const mediaQueryListener = (mediaquery) => {
+//   if (mediaquery.matches) {
+//     mobileLoadMore();
+//   } else {
+//     servicesList.forEach((service) => {
+//       service.style.display = "block";
+//     });
+//   }
+// };
+
+// // Call listener function at run time
+// mediaQueryListener(mediaquery);
+
+// // Attach listener function on state changes
+// window.addEventListener("change", function () {
+//   mediaQueryListener(mediaquery);
+// });

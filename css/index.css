@@ -201,6 +201,13 @@
   margin-top: 2.5rem;
 }
 .h-service {
+  display: grid;
+  align-content: center;
+  border: 2px solid var(--fg-2);
+  padding: 1rem;
+  max-width: 500px;
+  height: 300px;
+  margin: 0 auto;
   margin-bottom: 2rem;
 }
 .h-service-title {
@@ -244,12 +251,9 @@
     padding-right: 1rem;
   }
   .h-service {
-    padding: 1rem;
+    border: none;
     background: var(--white);
     margin-bottom: 0;
-  }
-  .h-bg .content-divider {
-    display: none;
   }
 }
 

@@ -23,9 +23,10 @@ const swiper = new Swiper(".swiper", {
       slidesPerView: 3,
     },
   },
-  // autoplay: {
-  //   // delay: 5000,
-  // },
+  autoplay: {
+    delay: 5000,
+  },
+  // autoplay: false,
 
   // Navigation arrows
   navigation: {
@@ -103,8 +104,8 @@ const mobileLoadMore = () => {
   const loadMoreBtn = document.querySelector(".services-load-more-btn");
   const showLessBtn = document.querySelector(".services-show-less-btn");
   const servicesLength = servicesList.length;
-  console.log(servicesLength);
 
+  // max num of cards to be displayed
   let numCards = 4;
 
   // MAIN function to show services cards
@@ -159,27 +160,4 @@ const mobileLoadMore = () => {
     if (numCards === 4) showLessBtn.style.display = "none";
   });
 };
-
 mobileLoadMore();
-
-// // Create a MediaQueryList object
-// const mediaquery = window.matchMedia("(max-width: 900px)");
-
-// // listener function
-// const mediaQueryListener = (mediaquery) => {
-//   if (mediaquery.matches) {
-//     mobileLoadMore();
-//   } else {
-//     servicesList.forEach((service) => {
-//       service.style.display = "block";
-//     });
-//   }
-// };
-
-// // Call listener function at run time
-// mediaQueryListener(mediaquery);
-
-// // Attach listener function on state changes
-// window.addEventListener("change", function () {
-//   mediaQueryListener(mediaquery);
-// });

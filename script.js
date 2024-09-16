@@ -8,25 +8,35 @@ const closePreviewBtn = document.querySelector(".btn-close-preview");
 const body = document.body;
 
 // H-Projects Slider
-const swiper = new Swiper(".swiper", {
+new Swiper(".slides-wrapper", {
   // Optional parameters
-  direction: "horizontal",
+  // direction: "horizontal",
   loop: true,
   slidesPerView: 1,
   spaceBetween: 16,
-  centeredSlides: true,
+  // centeredSlides: true,
   simulateTouch: true,
 
   // Responsive breakpoints
   breakpoints: {
+    900: {
+      slidesPerView: 2,
+    },
     1200: {
       slidesPerView: 3,
     },
   },
   autoplay: {
-    delay: 5000,
+    delay: 100,
   },
-  // autoplay: false,
+  autoplay: false,
+
+  pagination: {
+    el: ".swiper-pagination",
+    type: "bullets",
+    clickable: true,
+    dynamicBullets: true,
+  },
 
   // Navigation arrows
   navigation: {
@@ -40,7 +50,7 @@ slides.forEach((slide, i) => {
   // show preview when a slide is clicked
   slide.addEventListener("click", () => showPreview(i));
   // close preview
-  closePreviewBtn.addEventListener("click", () => closePreview(i));
+  closePreviewBtn?.addEventListener("click", () => closePreview(i));
   // close preview when ESC is pressed
   window.addEventListener("keydown", (e) => {
     if (!e.key === "Escape") return;
@@ -49,11 +59,13 @@ slides.forEach((slide, i) => {
 });
 
 const showPreview = (index) => {
+  if (!previewElements[index]) return;
   previewElements[index].classList.add("show");
   previewElements[index].parentElement.classList.add("show-preview");
   body.style.overflow = "hidden"; // hide scrollbar
 };
 const closePreview = (index) => {
+  if (!previewElements[index]) return;
   previewElements[index].classList.remove("show");
   previewElements[index].parentElement.classList.remove("show-preview");
   body.style.overflow = "visible"; // show scrollbar

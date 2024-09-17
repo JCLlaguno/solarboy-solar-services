@@ -23,13 +23,14 @@
 .services-sub-hero-container {
   width: 100%;
   background: rgba(255, 255, 255, 0.9);
+  background: rgba(43, 147, 72, 0.8);
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 1rem 0;
 }
 .services-sub-hero-description {
-  color: var(--fg);
+  color: var(--bg-primary);
   max-width: 90vw;
   font-size: 1.4rem;
 }
@@ -123,7 +124,7 @@
   font-size: 2rem;
 }
 .services-list {
-  margin-top: 2.5rem;
+  /* margin-top: 2.5rem; */
 }
 .services-btn-container {
   display: flex;
@@ -143,14 +144,13 @@
   fill: var(--accent);
 }
 .service {
-  display: grid;
+  display: block;
   align-content: center;
-  border: 2px solid var(--fg-2);
-  padding: 1rem;
   max-width: 500px;
-  height: 300px;
+  height: 0;
+  overflow: hidden;
   margin: 0 auto;
-  margin-bottom: 2rem;
+  transition: opacity 2s ease;
 }
 .service-title {
   margin-bottom: 0.5rem;
@@ -188,29 +188,32 @@
     align-self: start;
   }
   .service {
-    height: 100%;
+    height: auto !important;
     max-width: 9999px;
-    margin: 0;
-    display: grid !important;
+    margin: 0 !important;
+    display: grid;
     justify-items: start;
     align-content: center;
     background: var(--white);
-    margin-bottom: 0;
-    border: none;
+    margin-bottom: 0 !important;
+    border: none !important;
+    padding: 1rem !important;
+    opacity: 1 !important;
+    transition: none;
   }
   .service:nth-child(1),
   .service:nth-child(2) {
-    border-top: 2px solid var(--fg-2);
+    border-top: 2px solid var(--fg-2) !important;
   }
   .service:nth-child(7),
   .service:nth-child(8) {
-    border-bottom: 2px solid var(--fg-2);
+    border-bottom: 2px solid var(--fg-2) !important;
   }
   .service:nth-child(odd) {
-    border-left: 2px solid var(--fg-2);
+    border-left: 2px solid var(--fg-2) !important;
   }
   .service:nth-child(even) {
-    border-right: 2px solid var(--fg-2);
+    border-right: 2px solid var(--fg-2) !important;
   }
   .service:not(:nth-child(2), :nth-child(6)):nth-child(even),
   .service:not(:nth-child(3), :nth-child(7)):nth-child(odd) {
@@ -333,6 +336,8 @@
   padding-bottom: 3rem;
 }
 .review {
+  display: grid;
+  grid-template-rows: auto auto 1fr;
   width: 100%;
   height: 100%;
   border: 2px solid var(--fg-2);
@@ -340,8 +345,6 @@
   cursor: pointer;
 }
 .review-client-img-container {
-  /* border-top-left-radius: 20px; */
-  /* border-bottom-right-radius: 20px; */
   border: 2px solid var(--fg-2);
   width: 100px;
   height: 100px;
@@ -349,8 +352,6 @@
   margin-bottom: 1rem;
 }
 .review-client-img {
-  /* border-top-left-radius: 20px; */
-  /* border-bottom-right-radius: 20px; */
   width: 100%;
   height: 100%;
 }
@@ -358,10 +359,10 @@
   color: var(--fg);
   font-size: 1.5rem;
   letter-spacing: 1px;
-  /* text-align: center; */
   margin-bottom: 1rem;
 }
 .review-description {
+  align-self: start;
   color: var(--fg);
   font-size: 1rem;
   font-style: italic;

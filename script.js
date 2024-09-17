@@ -89,13 +89,12 @@ const loadMap = () => {
     zoom: 12,
     center: coords,
   });
-  // .setView(coords, 12);
   const markerIcon = L.icon({
     iconUrl: "./img/marker.svg",
     iconSize: [40, 40],
   });
 
-  // map location marker
+  // about us map
   new L.Marker(coords, { icon: markerIcon }).addTo(map);
   L.popup({ closeButton: false, offset: [1, -8] })
     .setLatLng(coords)
@@ -123,9 +122,23 @@ const mobileLoadMore = () => {
   // MAIN function to show services cards
   const showServices = (servicesList, numCards) => {
     servicesList.forEach((service, i) => {
-      // if current service is less than or equal to numCards display it
-      // display it
-      service.style.display = i <= numCards - 1 ? "grid" : "none";
+      // if current index is less than or equal to numCards,
+      // display it, else hide it
+      // service.style.display = i <= numCards - 1 ? "grid" : "none";
+      if (i <= numCards - 1) {
+        service.style.border = "2px solid var(--fg-2)";
+        service.style.padding = "1rem";
+        service.style.height = "300px";
+        service.style.marginBottom = "2rem";
+        service.style.opacity = 1;
+      } else {
+        service.style.border = "none";
+        service.style.padding = 0;
+        service.style.paddingLeft = "1rem";
+        service.style.height = 0;
+        service.style.marginBottom = 0;
+        service.style.opacity = 0;
+      }
     });
   };
 
@@ -158,7 +171,7 @@ const mobileLoadMore = () => {
   showLessBtn.addEventListener("click", (e) => {
     e.preventDefault();
 
-    // reduce numCards value by every time showLessBtn is pressed
+    // reduce numCards value by 4 every time showLessBtn is pressed
     // if numCards is greater than 4, subtract 4 to current numCard value.
     // otherwise, set numCard value to 4.
     numCards = numCards > 4 ? numCards - 4 : 4;
@@ -173,3 +186,42 @@ const mobileLoadMore = () => {
   });
 };
 mobileLoadMore();
+
+// project show/hide details
+const showHideDetails = () => {
+  const loadMoreBtn = document.querySelectorAll(".project-load-more-btn");
+  const showLessBtn = document.querySelectorAll(".project-show-less-btn");
+
+  loadMoreBtn.forEach((btn) =>
+    btn.addEventListener("click", (e) => {
+      btn.parentElement.parentElement.classList.add("show-details");
+      const descriptionList = btn.parentElement.nextElementSibling;
+      const projectDetail =
+        btn.parentElement.nextElementSibling.nextElementSibling;
+
+      descriptionList.style.maxHeight = descriptionList.scrollHeight + "px";
+      descriptionList.style.marginBottom = "1rem";
+      descriptionList.style.opacity = 1;
+      projectDetail.style.maxHeight = projectDetail.scrollHeight + "px";
+      projectDetail.style.marginBottom = "1rem";
+      projectDetail.style.opacity = 1;
+    })
+  );
+
+  showLessBtn.forEach((btn) =>
+    btn.addEventListener("click", (e) => {
+      btn.parentElement.parentElement.classList.remove("show-details");
+      const descriptionList = btn.parentElement.nextElementSibling;
+      const projectDetail =
+        btn.parentElement.nextElementSibling.nextElementSibling;
+
+      descriptionList.style.maxHeight = null;
+      descriptionList.style.marginBottom = 0;
+      descriptionList.style.opacity = 0;
+      projectDetail.style.maxHeight = null;
+      projectDetail.style.marginBottom = 0;
+      projectDetail.style.opacity = 0;
+    })
+  );
+};
+showHideDetails();

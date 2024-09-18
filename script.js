@@ -2,9 +2,6 @@
 
 const navBtn = document.querySelector(".nav-toggle-btn");
 const navLinks = document.querySelector(".nav-links");
-const slides = document.querySelectorAll(".swiper-slide");
-const previewElements = document.querySelectorAll(".slide-preview");
-const closePreviewBtn = document.querySelector(".btn-close-preview");
 const body = document.body;
 
 // H-Projects Slider
@@ -27,9 +24,9 @@ new Swiper(".slides-wrapper", {
     },
   },
   autoplay: {
-    delay: 100,
+    delay: 5000,
   },
-  autoplay: false,
+  // autoplay: false,
 
   pagination: {
     el: ".swiper-pagination",
@@ -46,30 +43,48 @@ new Swiper(".slides-wrapper", {
 });
 
 // Slide Preview
-slides.forEach((slide, i) => {
-  // show preview when a slide is clicked
-  slide.addEventListener("click", () => showPreview(i));
-  // close preview
-  closePreviewBtn?.addEventListener("click", () => closePreview(i));
-  // close preview when ESC is pressed
-  window.addEventListener("keydown", (e) => {
-    if (!e.key === "Escape") return;
-    closePreview(i);
-  });
-});
+const slidePreview = (targetEl, previewEl) => {
+  const closePreviewBtn = document.querySelector(".btn-close-preview");
 
-const showPreview = (index) => {
-  if (!previewElements[index]) return;
-  previewElements[index].classList.add("show");
-  previewElements[index].parentElement.classList.add("show-preview");
-  body.style.overflow = "hidden"; // hide scrollbar
+  const showPreview = (el, index) => {
+    if (!el[index]) return;
+    el[index].classList.add("show");
+    el[index].parentElement.classList.add("show-preview");
+    body.style.overflow = "hidden"; // hide scrollbar
+  };
+  const closePreview = (el, index) => {
+    if (!el[index]) return;
+    el[index].classList.remove("show");
+    el[index].parentElement.classList.remove("show-preview");
+    body.style.overflow = "visible"; // show scrollbar
+  };
+
+  targetEl.forEach((target, i) => {
+    // show preview when target is clicked
+    target.addEventListener("click", () => showPreview(previewEl, i));
+
+    // close preview
+    closePreviewBtn?.addEventListener("click", () =>
+      closePreview(previewEl, i)
+    );
+    // close preview when ESC is pressed
+    window.addEventListener("keydown", (e) => {
+      if (!e.key === "Escape") return;
+      closePreview(el, i);
+    });
+  });
 };
-const closePreview = (index) => {
-  if (!previewElements[index]) return;
-  previewElements[index].classList.remove("show");
-  previewElements[index].parentElement.classList.remove("show-preview");
-  body.style.overflow = "visible"; // show scrollbar
-};
+
+// home slide
+const slides = document.querySelectorAll(".swiper-slide");
+const previewElements = document.querySelectorAll(".slide-preview");
+// projects slide
+const projectImgs = document.querySelectorAll(".project-img-container");
+const previewElementsProjects = document.querySelectorAll(
+  ".project-img-preview"
+);
+slidePreview(slides, previewElements);
+slidePreview(projectImgs, previewElementsProjects);
 
 // Nav Toggle
 navBtn.addEventListener("click", (e) => {
@@ -94,7 +109,6 @@ const loadMap = () => {
     iconSize: [40, 40],
   });
 
-  // about us map
   new L.Marker(coords, { icon: markerIcon }).addTo(map);
   L.popup({ closeButton: false, offset: [1, -8] })
     .setLatLng(coords)

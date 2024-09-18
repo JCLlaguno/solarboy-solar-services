@@ -12,8 +12,10 @@
 :root {
   --ff: "Open Sans", sans-serif;
   --bg-primary: #faf9f6;
+  --bg-primary: #f1faee;
+  --bg-primary: #f4faf6;
   --fg: #333;
-  --fg-2: #444;
+  --fg-2: #666;
   --white: #fff;
   --accent: #15616d;
   --accent: #2b9348;
@@ -24,8 +26,16 @@
   --line-height: 1.5;
   --transition: all 0.2s ease-in-out;
   --radius: 2px;
+  --animation: fade 1s;
 }
-
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 /* =================================== */
 /* General Styles */
 /* =================================== */

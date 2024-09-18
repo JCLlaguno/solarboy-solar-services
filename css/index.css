@@ -227,7 +227,7 @@
   .h-bg {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    column-gap: 2px;
+    column-gap: 0.125rem;
     background: var(--fg-2);
   }
   .h-services-list {
@@ -235,7 +235,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    gap: 2px;
+    gap: 0.125rem;
   }
   .h-services-header-bg {
     display: grid;
@@ -342,6 +342,7 @@
   max-width: 1200px;
   margin: 0 auto;
   height: 90%;
+  animation: var(--animation);
 }
 .preview-img {
   max-width: 100%;

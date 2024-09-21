@@ -43,9 +43,6 @@
   .about-hero-title {
     font-size: 4rem;
   }
-  .about-hero-container {
-    /* padding-top: 3rem; */
-  }
   .about-sub-hero-description {
     font-size: 1.5rem;
   }
@@ -252,7 +249,7 @@
 .map {
   width: 90vw;
   aspect-ratio: 16 / 10;
-  border: 5px solid var(--fg);
+  border: 5px solid var(--fg-2);
   transition: var(--transition);
   z-index: 1;
 }

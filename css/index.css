@@ -125,7 +125,7 @@
   color: var(--fg);
 }
 .h-about-imgs-container {
-  margin-top: 1rem;
+  margin-top: 2.5rem;
   display: grid;
   gap: 1rem;
   grid-template-columns: 1fr 1fr;
@@ -154,6 +154,7 @@
 }
 @media screen and (width >= 1150px) {
   .h-about-content {
+    width: 90%;
     max-width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;

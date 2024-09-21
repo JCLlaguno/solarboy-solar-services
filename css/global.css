@@ -42,6 +42,7 @@
 body {
   font-family: var(--ff);
   line-height: var(--line-height);
+  overflow-x: hidden;
 }
 body::-webkit-scrollbar {
   background: transparent;
@@ -69,6 +70,7 @@ img:not(.nav-logo) {
   font-family: var(--ff);
   border: 2px solid var(--fg);
   color: var(--fg);
+  -webkit-tap-highlight-color: transparent;
 }
 .btn:hover {
   color: var(--bg-primary);
@@ -88,6 +90,7 @@ a {
   display: block;
   text-decoration: none;
   color: var(--fg);
+  -webkit-tap-highlight-color: transparent;
 }
 h1 {
   font-size: 4rem;

@@ -4,6 +4,20 @@ const navBtn = document.querySelector(".nav-toggle-btn");
 const navLinks = document.querySelector(".nav-links");
 const body = document.body;
 
+// Hero Video
+// let count = 1;
+// const heroVideo = document.getElementById("hero-video");
+// heroVideo.addEventListener(
+//   "ended",
+//   () => {
+//     if (count === 1) {
+//       count++;
+//       heroVideo.src = `./videos/main${count}.mp4`;
+//     }
+//   },
+//   true
+// );
+
 // H-Projects Slider
 new Swiper(".slides-wrapper", {
   // Optional parameters
@@ -97,7 +111,7 @@ const loadMap = () => {
   if (!L) return;
   if (!document.getElementById("map")) return;
 
-  const coords = [13.2548727, 123.6655128];
+  const coords = [13.2557788, 123.6847076];
 
   const map = L.map("map", {
     scrollWheelZoom: false,

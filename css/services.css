@@ -124,12 +124,6 @@
   font-weight: 500;
   padding: 0;
 }
-.services-title {
-  margin-bottom: 1rem;
-  letter-spacing: 1px;
-  color: var(--fg);
-  font-size: 1.5rem;
-}
 .services-description {
   color: var(--fg);
   font-size: 2rem;
@@ -328,10 +322,6 @@
   background: var(--white);
 }
 .services-reviews-title {
-  margin-bottom: 1rem;
-  letter-spacing: 1px;
-  color: var(--fg);
-  font-size: 1.5rem;
   text-align: center;
 }
 .swiper-pagination-bullet {

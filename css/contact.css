@@ -111,12 +111,6 @@
   width: 90vw;
   margin: 0 auto;
 }
-.contact-content-title {
-  letter-spacing: 1px;
-  font-size: 1.5rem;
-  font-size: 2rem;
-  color: var(--fg);
-}
 .contact-content-description {
   color: var(--fg);
   font-size: 2rem;
@@ -221,11 +215,6 @@
   padding: 1rem;
   background: var(--white);
   max-height: 300px;
-}
-.contact-address-title {
-  font-size: 2rem;
-  color: var(--fg);
-  margin-bottom: 1rem;
 }
 .contact-address-description {
   font-size: 1.2rem;

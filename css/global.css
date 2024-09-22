@@ -118,9 +118,14 @@ h3 {
 .section-header {
   margin-bottom: 2.5rem;
 }
-/* .content-title {
+.section-sub-title {
 }
-*/
+.content-title {
+  margin-bottom: 1rem;
+  letter-spacing: var(--content-spacing);
+  color: var(--fg);
+  font-size: 1.5rem;
+}
 .content-description {
   font-weight: 500;
   font-size: 2rem;

@@ -106,12 +106,6 @@
   margin: 2.5rem 0;
   max-width: 9999px;
 }
-.about-content-title {
-  margin-bottom: 1rem;
-  letter-spacing: 1px;
-  color: var(--fg);
-  font-size: 1.5rem;
-}
 .about-description {
   font-weight: 500;
   font-size: 1rem;
@@ -165,9 +159,6 @@
   }
   .about-header {
     margin-bottom: 0;
-  }
-  .about-content-title {
-    /* font-size: 2rem; */
   }
   .about-description {
     font-size: 1rem;
@@ -237,12 +228,6 @@
 }
 .about-map-title-container {
   margin-bottom: 2rem;
-}
-.about-map-title {
-  margin-bottom: 1rem;
-  letter-spacing: 1px;
-  color: var(--fg);
-  font-size: 1.5rem;
 }
 .about-map:hover {
   border-color: var(--accent);

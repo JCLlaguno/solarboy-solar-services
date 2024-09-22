@@ -98,9 +98,6 @@
 .gallery {
   background: var(--bg-primary);
 }
-.projects-container {
-  padding-top: 0;
-}
 .projects-gallery-header {
   margin-bottom: 2rem;
   margin-bottom: 0;
@@ -152,8 +149,6 @@
 }
 .projects-title {
   text-align: center;
-  font-size: 2rem;
-  color: var(--fg);
 }
 .projects-container {
   min-height: 100vh;
@@ -211,7 +206,7 @@
   background: var(--fg);
   transition: var(--transition);
 }
-.project-hilde-details:hover:after,
+.project-hide-details:hover:after,
 .project-show-details:hover:after {
   background: var(--accent);
 }

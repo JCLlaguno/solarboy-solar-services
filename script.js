@@ -140,8 +140,8 @@ loadMap();
 // services Load More toggle
 const mobileLoadMore = () => {
   const servicesList = document.querySelectorAll(".service");
-  const loadMoreBtn = document.querySelector(".services-load-more-btn");
-  const showLessBtn = document.querySelector(".services-show-less-btn");
+  const loadMoreBtn = document.querySelector(".services-show-more");
+  const showLessBtn = document.querySelector(".services-show-less");
   const servicesLength = servicesList.length;
 
   // max num of cards to be displayed
@@ -159,10 +159,11 @@ const mobileLoadMore = () => {
         service.style.height = "300px";
         service.style.marginBottom = "2rem";
         service.style.opacity = 1;
+        // service.style.animation = "display 2s";
       } else {
         service.style.border = "none";
         service.style.padding = 0;
-        service.style.paddingLeft = "1rem";
+        // service.style.paddingLeft = "1rem";
         service.style.height = 0;
         service.style.marginBottom = 0;
         service.style.opacity = 0;
@@ -217,12 +218,13 @@ mobileLoadMore();
 
 // project show/hide details
 const showHideDetails = () => {
-  const loadMoreBtn = document.querySelectorAll(".project-load-more-btn");
-  const showLessBtn = document.querySelectorAll(".project-show-less-btn");
+  const showDetails = document.querySelectorAll(".project-show-details");
+  const hideDetails = document.querySelectorAll(".project-hide-details");
 
-  loadMoreBtn.forEach((btn) =>
+  showDetails.forEach((btn) =>
     btn.addEventListener("click", (e) => {
       btn.parentElement.parentElement.classList.add("show-details");
+      const btnContainer = btn.parentElement;
       const descriptionList = btn.parentElement.nextElementSibling;
       const projectDetail =
         btn.parentElement.nextElementSibling.nextElementSibling;
@@ -233,12 +235,14 @@ const showHideDetails = () => {
       projectDetail.style.maxHeight = projectDetail.scrollHeight + "px";
       projectDetail.style.marginBottom = "1rem";
       projectDetail.style.opacity = 1;
+      btnContainer.style.marginBottom = "1rem";
     })
   );
 
-  showLessBtn.forEach((btn) =>
+  hideDetails.forEach((btn) =>
     btn.addEventListener("click", (e) => {
       btn.parentElement.parentElement.classList.remove("show-details");
+      const btnContainer = btn.parentElement;
       const descriptionList = btn.parentElement.nextElementSibling;
       const projectDetail =
         btn.parentElement.nextElementSibling.nextElementSibling;
@@ -249,6 +253,7 @@ const showHideDetails = () => {
       projectDetail.style.maxHeight = null;
       projectDetail.style.marginBottom = 0;
       projectDetail.style.opacity = 0;
+      btnContainer.style.marginBottom = "1rem";
     })
   );
 };

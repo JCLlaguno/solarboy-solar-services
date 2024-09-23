@@ -108,7 +108,6 @@
 }
 .about-description {
   font-weight: 500;
-  font-size: 1rem;
   color: var(--fg);
 }
 .about-img-container {
@@ -136,6 +135,11 @@
 .btn-read-more:hover {
   color: var(--bg-primary);
   background: var(--accent);
+}
+.content-divider {
+  background: var(--fg);
+  height: 2px;
+  width: 100%;
 }
 @media screen and (width >= 600px) {
   .about-content {

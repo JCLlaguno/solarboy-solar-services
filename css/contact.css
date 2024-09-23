@@ -111,10 +111,6 @@
   width: 90vw;
   margin: 0 auto;
 }
-.contact-content-description {
-  color: var(--fg);
-  font-size: 2rem;
-}
 .contact-form {
   padding: 1rem;
   border: 2px solid var(--fg-2);
@@ -217,7 +213,6 @@
   max-height: 300px;
 }
 .contact-address-description {
-  font-size: 1.2rem;
   color: var(--fg);
 }
 
@@ -254,6 +249,12 @@
   }
   .contact-form {
     padding: 1.5rem;
+  }
+  .contact-address {
+    padding: 1.5rem;
+  }
+  .contact-address-description {
+    font-size: 1.2rem;
   }
 }
 @media screen and (width >= 1150px) {

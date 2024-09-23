@@ -40,7 +40,7 @@ new Swiper(".slides-wrapper", {
   autoplay: {
     delay: 5000,
   },
-  // autoplay: false,
+  autoplay: false,
 
   pagination: {
     el: ".swiper-pagination",

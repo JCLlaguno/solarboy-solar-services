@@ -58,6 +58,7 @@
   padding: 1rem 0.5rem;
   margin-top: 1rem;
   transition: var(--transition);
+  border-color: transparent;
 }
 .hero-btn-cta:hover {
   color: var(--bg-primary);
@@ -75,7 +76,6 @@
 .h-sub-hero-description {
   max-width: 90vw;
   color: var(--bg-primary);
-  font-size: 1.4rem;
 }
 @media screen and (width >= 500px) {
   .hero {
@@ -139,11 +139,6 @@
 .h-about-content-title {
   margin-bottom: 1rem;
   letter-spacing: 1px;
-}
-.h-about-description {
-  font-weight: 500;
-  font-size: 2rem;
-  color: var(--fg);
 }
 .h-about-imgs-container {
   margin-top: 2.5rem;
@@ -214,10 +209,6 @@
 }
 .h-services-title {
   margin-bottom: 1rem;
-}
-.h-services-description {
-  color: var(--fg);
-  font-size: 2rem;
 }
 .h-services-list {
   display: grid;
@@ -376,10 +367,6 @@
 /* =================================== */
 .h-partners-header {
   text-align: center;
-}
-.h-partners-description {
-  color: var(--fg);
-  font-size: 2rem;
 }
 .h-partners-logos {
   display: grid;

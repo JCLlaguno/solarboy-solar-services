@@ -1,5 +1,4 @@
-/* =================================== */
-/* NAVBAR */ /* =================================== */
+/* NAVBAR */
 .navbar {
   position: fixed;
   top: 0;
@@ -7,7 +6,7 @@
   width: 100%;
   background: var(--bg-primary);
   z-index: 10;
-  /* display: none; */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 .nav-header {
   padding: 0 1rem;
@@ -16,9 +15,12 @@
   align-items: center;
   justify-content: space-between;
 }
+.nav-header a {
+  height: 2rem;
+}
 .nav-logo {
   width: auto;
-  height: 2rem;
+  height: 100%;
 }
 .nav-toggle-btn {
   margin-top: 0;
@@ -97,8 +99,8 @@
     font-size: 1rem;
     font-weight: 600;
     padding: 0.6rem 0.6rem;
-    background: transparent;
-    color: var(--fg);
+    background: var(--fg);
+    color: var(--bg-primary);
     border: 2px solid var(--fg);
   }
   .nav-btn-cta:hover {

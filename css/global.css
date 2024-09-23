@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300..800&display=swap");
+
 /* =================================== */
 /* GLOBAL CSS */
 /* =================================== */
@@ -55,6 +56,11 @@ img:not(.nav-logo) {
   display: block;
   object-fit: cover;
 }
+.btn,
+li,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
 .btn {
   background: none;
   border: none;
@@ -70,7 +76,6 @@ img:not(.nav-logo) {
   font-family: var(--ff);
   border: 2px solid var(--fg);
   color: var(--fg);
-  -webkit-tap-highlight-color: transparent;
 }
 .btn:hover {
   color: var(--bg-primary);
@@ -90,13 +95,13 @@ a {
   display: block;
   text-decoration: none;
   color: var(--fg);
-  -webkit-tap-highlight-color: transparent;
 }
 h1 {
   font-size: 4rem;
 }
 h2 {
-  font-size: 2.5rem;
+  font-size: 1.4rem;
+  font-weight: 500;
 }
 h3 {
   color: var(--fg);
@@ -104,27 +109,29 @@ h3 {
   font-size: 1.2rem;
   letter-spacing: var(--content-spacing);
 }
+@media screen and (width>= 500px) {
+  h2 {
+    font-size: 1.5rem;
+  }
+}
 .div-center {
   width: 90vw;
   padding: 3rem 0;
   margin: 0 auto;
   max-width: 2000px;
 }
-.content-divider {
-  background: var(--fg);
-  height: 2px;
-  width: 100%;
-}
 .section-header {
   margin-bottom: 2.5rem;
-}
-.section-sub-title {
 }
 .content-title {
   margin-bottom: 1rem;
   letter-spacing: var(--content-spacing);
   color: var(--fg);
   font-size: 1.5rem;
+}
+.content-sub-title {
+  color: var(--fg);
+  font-size: 2rem;
 }
 .content-description {
   font-weight: 500;

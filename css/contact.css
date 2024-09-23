@@ -162,47 +162,66 @@
   font-size: 1rem;
   font-weight: 700;
 }
-/* custom select option */
-.custom-select {
+
+/* custom dropdown */
+.dropdown {
   position: relative;
-  display: block;
-  z-index: 9;
 }
-.select-selected {
-  display: grid;
-  align-content: center;
+.select {
   background: var(--white);
   color: var(--fg);
-  padding: 1rem 0.5rem;
-  font-size: 1rem;
-  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   border: 2px solid var(--fg-2);
-  height: 54px;
+  padding: 1rem 0.5rem;
+  height: 54.4px;
+  cursor: pointer;
 }
-/* Style the dropdown items */
-.select-items {
-  position: absolute;
-  display: none;
+.select.select-clicked {
+  border-bottom: 2px solid transparent;
+}
+.caret {
+  width: 30px;
+  height: 30px;
+  transform: rotate(-90deg);
+}
+.caret-rotate {
+  transform: rotate(90deg);
+}
+.menu {
   background: var(--white);
+  border: 2px solid var(--fg-2);
+  border-top: none;
+  border-bottom: none;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-left: 2px solid var(--fg-2);
-  border-right: 2px solid var(--fg-2);
-  border-bottom: 2px solid var(--fg-2);
-  z-index: 1;
+  color: var(--fg);
+  position: absolute;
+  top: 3.2rem;
+  left: 50%;
   width: 100%;
+  transform: translateX(-50%);
+  overflow: hidden;
+  height: 0;
+  transition: height 200ms;
+  z-index: 9;
 }
-/* Style the dropdown items */
-.select-items div {
+.menu li {
   padding: 1rem 0.5rem;
   cursor: pointer;
-  /* animation: var(--animation); */
+  color: var(--fg);
 }
-/* Style the dropdown items on hover */
-.select-items div:hover {
+.menu li:hover {
   background: var(--accent);
   color: var(--bg-primary);
 }
-/* end of custom select option */
+.menu.menu-open {
+  border-bottom: 2px solid var(--fg-2);
+}
+.menu-open {
+  height: 170px;
+}
+/* end of custom dropdown */
 
 /* contact info */
 .contact-address {

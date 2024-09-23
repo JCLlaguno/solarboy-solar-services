@@ -173,17 +173,7 @@
   height: 0;
   margin: 0 auto;
   overflow: hidden;
-  transform: translateX(0);
-}
-@keyframes display {
-  from {
-    transform: translateX(-100%);
-    transition-delay: 200ms;
-  }
-  to {
-    transform: translateX(0);
-    transition-delay: 200ms;
-  }
+  transition: opacity 1s;
 }
 .service-title {
   margin-bottom: 0.5rem;

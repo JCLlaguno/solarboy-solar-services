@@ -27,6 +27,8 @@
   --line-height: 1.5;
   --transition: all 0.2s ease-in-out;
   --radius: 2px;
+  --border-small: 2px solid var(--fg-2);
+  --border-large: 5px solid var(--fg-2);
   --animation: fade 1s;
 }
 @keyframes fade {

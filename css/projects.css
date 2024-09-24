@@ -118,7 +118,7 @@
   display: block;
 }
 .project-gallery-link:hover .project-gallery-img-container {
-  border-color: var(--accent);
+  border-color: var(--fg);
 }
 .project-gallery-img-container {
   aspect-ratio: 16/10;
@@ -239,13 +239,12 @@
 }
 .project-img-container {
   width: 100%;
-  /* aspect-ratio: 16/10; */
   position: relative;
-  border: 5px solid var(--fg-2);
+  border: var(--border-large);
   transition: var(--transition);
 }
 .project-img-container:hover {
-  border-color: var(--accent);
+  border-color: var(--fg);
 }
 .project-img {
   width: 100%;
@@ -257,7 +256,7 @@
   padding: 0.6rem 0.6rem;
   background: transparent;
   color: var(--fg);
-  border: 2px solid var(--fg);
+  border: var(--border-small);
 }
 .btn-read-more:hover {
   color: var(--bg-primary);

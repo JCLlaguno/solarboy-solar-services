@@ -150,12 +150,11 @@
 .h-about-img-container {
   aspect-ratio: 1/1;
   height: auto;
-  border: 5px solid var(--fg-2);
+  border: var(--border-large);
   transition: var(--transition);
-  /* overflow: hidden; */
 }
 .h-about-img-container:hover {
-  border-color: var(--accent);
+  border-color: var(--fg);
 }
 .h-about-img {
   height: 100%;
@@ -217,7 +216,7 @@
 .h-service {
   display: grid;
   align-content: center;
-  border: 2px solid var(--fg-2);
+  border: var(--border-small);
   padding: 1rem;
   max-width: 500px;
   height: 300px;
@@ -258,7 +257,7 @@
     margin-bottom: 0;
     margin: 0;
     max-width: 9999px;
-    border: 2px solid var(--fg-2);
+    border: var(--border-small);
   }
 }
 @media screen and (width >= 1200px) {
@@ -279,14 +278,11 @@
 .swiper-slide {
   height: auto;
   position: relative;
-  border: 5px solid var(--fg-2);
+  border: var(--border-large);
   transition: var(--transition);
 }
 .swiper-slide:hover {
-  border-color: var(--accent);
-}
-.swiper-slide:hover .swiper-slide-img {
-  /* transform: scale(1.1); */
+  border-color: var(--fg);
 }
 .swiper-slide-img {
   width: 100%;

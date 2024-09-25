@@ -114,10 +114,10 @@
   margin: 0 auto;
   gap: 1rem;
 }
-.project-gallery-link {
+.project-gallery-img-container {
   display: block;
 }
-.project-gallery-link:hover .project-gallery-img-container {
+.project-gallery-img-container:hover {
   border-color: var(--fg);
 }
 .project-gallery-img-container {

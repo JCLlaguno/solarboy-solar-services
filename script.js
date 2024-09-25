@@ -327,3 +327,33 @@ const revealOnScroll = () => {
   hiddenElements.forEach((el) => observer.observe(el));
 };
 revealOnScroll();
+
+// SMOOTH SCROLLING PROJECTS PAGE
+// image-links to projects
+const projectGalleryLinks = document.querySelectorAll(".project-link");
+
+// projects
+const projects = [...document.querySelectorAll(".project")];
+
+// function for smooth scrolling
+const scrollToProject = (selector) => {
+  window.scrollTo({
+    behavior: "smooth",
+    top:
+      selector.getBoundingClientRect().top -
+      90 -
+      body.getBoundingClientRect().top,
+  });
+};
+// loop through each project gallery image
+projectGalleryLinks.forEach((projectGalleryLink, i) => {
+  // attach a click event listener to each image
+  // when gallery image is clicked, go to project with same image
+  projectGalleryLink.addEventListener("click", () => {
+    // return the project which matches gallery img's index
+    const targetProject = projects.find((_, index) => index === i);
+
+    // go to project
+    scrollToProject(targetProject);
+  });
+});

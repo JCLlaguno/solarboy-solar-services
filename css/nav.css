@@ -5,7 +5,7 @@
   left: 0;
   width: 100%;
   background: var(--bg-primary);
-  z-index: 10;
+  z-index: 100;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 .nav-header {

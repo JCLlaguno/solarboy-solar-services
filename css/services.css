@@ -210,8 +210,7 @@
     margin: 0 !important;
     align-content: center;
     padding: 1rem !important;
-    opacity: 1 !important;
-    transition: none !important;
+    /* transition: none !important; */
     border: var(--border-small) !important;
   }
 }

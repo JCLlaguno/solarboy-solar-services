@@ -4,21 +4,7 @@ const navBtn = document.querySelector(".nav-toggle-btn");
 const navLinks = document.querySelector(".nav-links");
 const body = document.body;
 
-// Hero Video
-// let count = 1;
-// const heroVideo = document.getElementById("hero-video");
-// heroVideo.addEventListener(
-//   "ended",
-//   () => {
-//     if (count === 1) {
-//       count++;
-//       heroVideo.src = `./videos/main${count}.mp4`;
-//     }
-//   },
-//   true
-// );
-
-// H-Projects Slider
+// H-PROJECTS SLIDER
 new Swiper(".slides-wrapper", {
   // Optional parameters
   // direction: "horizontal",
@@ -56,7 +42,7 @@ new Swiper(".slides-wrapper", {
   },
 });
 
-// Slide Preview
+// slide preview
 const slidePreview = (targetEl, previewEl) => {
   const closePreviewBtn = document.querySelector(".btn-close-preview");
 
@@ -84,7 +70,7 @@ const slidePreview = (targetEl, previewEl) => {
     // close preview when ESC is pressed
     window.addEventListener("keydown", (e) => {
       if (!e.key === "Escape") return;
-      closePreview(el, i);
+      closePreview(previewEl, i);
     });
   });
 };
@@ -100,7 +86,7 @@ const previewElementsProjects = document.querySelectorAll(
 slidePreview(slides, previewElements);
 slidePreview(projectImgs, previewElementsProjects);
 
-// Nav Toggle
+// NAV TOGGLE
 navBtn.addEventListener("click", (e) => {
   e.preventDefault();
   navLinks.classList.toggle("show-links");
@@ -137,12 +123,11 @@ const loadMap = () => {
 };
 loadMap();
 
-// services Load More toggle
+// SERVICES SHOW MORE/LESS
 const mobileLoadMore = () => {
   const servicesList = document.querySelectorAll(".service");
   const loadMoreBtn = document.querySelector(".services-show-more");
   const showLessBtn = document.querySelector(".services-show-less");
-  const test = document.querySelector(".nav-logo");
   const servicesLength = servicesList.length;
 
   // max num of cards to be displayed
@@ -154,38 +139,35 @@ const mobileLoadMore = () => {
     servicesList.forEach((service, i) => {
       // if current index is less than or equal to numCards,
       // display it, else hide it
-      // service.style.display = i <= numCards - 1 ? "grid" : "none";
       if (i <= numCards - 1) {
         // 8
         service.style.border = "2px solid var(--fg-2)";
         service.style.padding = "1rem";
         service.style.height = "300px";
         service.style.marginBottom = "2rem";
-        service.style.opacity = 1;
+        // service.style.opacity = opacity;
 
         // if current index is greater or equal 4 and
         // if current index is less than or equal to numCards,
         // increase transition delay by 200ms
-        if (i >= servicesList.length - 4) {
-          // 4
-          service.style.transitionDelay = `${delay}ms`;
-          delay += 200;
-        }
+        // if (i >= servicesList.length - 4) {
+        //   // 4
+        //   service.style.transitionDelay = `${delay}ms`;
+        //   delay += 200;
+        // }
       } else {
         service.style.border = "none";
         service.style.padding = 0;
         service.style.height = 0;
         service.style.marginBottom = 0;
-        service.style.opacity = 0;
-        delay = 0;
+        // service.style.opacity = opacity;
+        // delay = 0;
       }
     });
   };
 
   // initial page load
   if (!showLessBtn) return;
-  // if total cards number = 4, hide show less button
-  // if (numCards === 4) showLessBtn.style.display = "none";
 
   // hide showLessBtn by default
   showLessBtn.style.display = "none";
@@ -230,7 +212,7 @@ const mobileLoadMore = () => {
 };
 mobileLoadMore();
 
-// project show/hide details
+// PROJECT SHOW/HIDE DETAILS
 const showHideDetails = () => {
   const showDetails = document.querySelectorAll(".project-show-details");
   const hideDetails = document.querySelectorAll(".project-hide-details");
@@ -318,3 +300,30 @@ const loadCustomSelect = () => {
   });
 };
 loadCustomSelect();
+
+// SCROLL REVEAL ANIMATION
+const revealOnScroll = () => {
+  let delay = 0;
+  const addDelay = (el) => {
+    el.style.transitionDelay = `${delay}ms`;
+    delay += 200;
+  };
+  // observer for all elements with .hidden class
+  const options = {
+    rootMargin: "-16px",
+  };
+  const observer = new IntersectionObserver((entries, {}) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+        addDelay(entry.target);
+      } else {
+        entry.target.classList.remove("show");
+        delay = 0;
+      }
+    });
+  }, options);
+  const hiddenElements = document.querySelectorAll(".hidden");
+  hiddenElements.forEach((el) => observer.observe(el));
+};
+revealOnScroll();

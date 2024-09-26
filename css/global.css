@@ -164,3 +164,49 @@ h3 {
     transition: none;
   }
 } */
+
+/* =================================== */
+/* BACK TO TOP BUTTON */
+/* =================================== */
+.back-to-top {
+  width: 40px;
+  height: 0;
+  overflow: hidden;
+  background: var(--fg);
+  position: fixed;
+  bottom: 0.7rem;
+  right: 0.7rem;
+  opacity: 0;
+  transition: var(--transition);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 103;
+  transition: opacity 200ms;
+  cursor: pointer;
+}
+.back-to-top.show {
+  height: 40px;
+  opacity: 1;
+}
+@media screen and (width >= 500px) {
+  .back-to-top {
+    bottom: 2rem;
+    right: 2.04rem;
+  }
+}
+@media screen and (width >= 834px) {
+  .back-to-top {
+    bottom: 2rem;
+  }
+}
+@media screen and (width >= 1280px) {
+  .back-to-top {
+    bottom: 4rem;
+    width: 45px;
+  }
+  .back-to-top.show {
+    height: 45px;
+  }
+}
+.back-to-top svg {
+  fill: var(--bg-primary);
+}

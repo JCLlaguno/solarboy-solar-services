@@ -145,23 +145,11 @@ const mobileLoadMore = () => {
         service.style.padding = "1rem";
         service.style.height = "300px";
         service.style.marginBottom = "2rem";
-        // service.style.opacity = opacity;
-
-        // if current index is greater or equal 4 and
-        // if current index is less than or equal to numCards,
-        // increase transition delay by 200ms
-        // if (i >= servicesList.length - 4) {
-        //   // 4
-        //   service.style.transitionDelay = `${delay}ms`;
-        //   delay += 200;
-        // }
       } else {
         service.style.border = "none";
         service.style.padding = 0;
         service.style.height = 0;
         service.style.marginBottom = 0;
-        // service.style.opacity = opacity;
-        // delay = 0;
       }
     });
   };
@@ -329,31 +317,57 @@ const revealOnScroll = () => {
 revealOnScroll();
 
 // SMOOTH SCROLLING PROJECTS PAGE
-// image-links to projects
-const projectGalleryLinks = document.querySelectorAll(".project-link");
+const projectsSmoothScroll = () => {
+  // image-links to projects
+  const projectGalleryLinks = document.querySelectorAll(".project-link");
+  // projects
+  const projects = Array.from(document.querySelectorAll(".project"));
 
-// projects
-const projects = [...document.querySelectorAll(".project")];
+  // function for smooth scrolling
+  const scrollToProject = (selector) => {
+    window.scrollTo({
+      behavior: "smooth",
+      top:
+        selector.getBoundingClientRect().top -
+        90 -
+        body.getBoundingClientRect().top,
+    });
+  };
+  // loop through each project gallery image
+  projectGalleryLinks.forEach((projectGalleryLink, i) => {
+    // attach a click event listener to each image
+    // when gallery image is clicked, go to project with same image
+    projectGalleryLink.addEventListener("click", () => {
+      // return the project which matches gallery img's index
+      const targetProject = projects.find((_, index) => index === i);
 
-// function for smooth scrolling
-const scrollToProject = (selector) => {
-  window.scrollTo({
-    behavior: "smooth",
-    top:
-      selector.getBoundingClientRect().top -
-      90 -
-      body.getBoundingClientRect().top,
+      // go to project
+      scrollToProject(targetProject);
+    });
   });
 };
-// loop through each project gallery image
-projectGalleryLinks.forEach((projectGalleryLink, i) => {
-  // attach a click event listener to each image
-  // when gallery image is clicked, go to project with same image
-  projectGalleryLink.addEventListener("click", () => {
-    // return the project which matches gallery img's index
-    const targetProject = projects.find((_, index) => index === i);
+projectsSmoothScroll();
 
-    // go to project
-    scrollToProject(targetProject);
-  });
-});
+// BACK TO TOP BUTTON
+const backToTop = () => {
+  // btn element
+  const backToTopBtn = document.querySelector(".back-to-top");
+
+  // function to show/hide back to top button
+  // display back to top button when scrollTop value > 250
+  const toggleBackToTop = () => {
+    document.documentElement.scrollTop > 500
+      ? backToTopBtn.classList.add("show")
+      : backToTopBtn.classList.remove("show");
+  };
+
+  // function to scroll to top of the page
+  const scrollToTop = () =>
+    body.scrollIntoView({ behavior: "smooth", block: "start" });
+
+  // call the toggle function when page is scrolled 250px
+  window.addEventListener("scroll", () => toggleBackToTop());
+  // when button is clicked call the scroll function
+  backToTopBtn.addEventListener("click", scrollToTop);
+};
+backToTop();

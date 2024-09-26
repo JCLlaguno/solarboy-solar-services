@@ -1,7 +1,5 @@
 "use strict";
 
-const navBtn = document.querySelector(".nav-toggle-btn");
-const navLinks = document.querySelector(".nav-links");
 const body = document.body;
 
 // H-PROJECTS SLIDER
@@ -87,9 +85,17 @@ slidePreview(slides, previewElements);
 slidePreview(projectImgs, previewElementsProjects);
 
 // NAV TOGGLE
+const navBtn = document.querySelector(".nav-toggle-btn");
+const navLinks = document.querySelector(".nav-links");
 navBtn.addEventListener("click", (e) => {
   e.preventDefault();
-  navLinks.classList.toggle("show-links");
+  if (navLinks.classList.contains("show-links")) {
+    navLinks.classList.remove("show-links");
+    navLinks.style.height = 0;
+  } else {
+    navLinks.classList.add("show-links");
+    navLinks.style.height = `${navLinks.scrollHeight}px`;
+  }
 });
 
 // LOCATION MAP
@@ -352,11 +358,14 @@ projectsSmoothScroll();
 const backToTop = () => {
   // btn element
   const backToTopBtn = document.querySelector(".back-to-top");
+  const top = document.querySelector(".top");
+  const navbar = document.querySelector(".navbar");
 
   // function to show/hide back to top button
   // display back to top button when scrollTop value > 250
   const toggleBackToTop = () => {
-    document.documentElement.scrollTop > 500
+    document.documentElement.scrollTop >
+    top.getBoundingClientRect().height - navbar.getBoundingClientRect().height
       ? backToTopBtn.classList.add("show")
       : backToTopBtn.classList.remove("show");
   };
@@ -371,3 +380,32 @@ const backToTop = () => {
   backToTopBtn.addEventListener("click", scrollToTop);
 };
 backToTop();
+
+const stickyNav = () => {
+  const navbar = document.querySelector(".navbar");
+  // const hero = document.querySelector(".hero");
+
+  //   const navHeight = navbar.getBoundingClientRect().height;
+  //   console.log(navHeight);
+
+  //   const sticky = function (entries) {
+  //     const [entry] = entries;
+  //     if (!entry.isIntersecting) {
+  //       navbar.classList.add("sticky");
+  //     } else {
+  //       navbar.classList.remove("sticky");
+  //     }
+  //   };
+
+  //   const observer = new IntersectionObserver(sticky, {
+  //     root: null,
+  //     threshold: 0,
+  //     rootMargin: `-${navHeight}px`,
+  //   });
+  //   observer.observe(hero);
+
+  window.addEventListener("scroll", () =>
+    navbar.classList.toggle("sticky", window.scrollY > 0)
+  );
+};
+stickyNav();

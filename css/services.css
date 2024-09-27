@@ -6,6 +6,9 @@
 @import url("./footer.css");
 
 /* HERO */
+.services {
+  background: var(--bg-primary);
+}
 .services-hero {
   position: relative;
   min-height: 100vh;
@@ -23,34 +26,20 @@
 }
 .services-sub-hero-container {
   width: 100%;
-  background: rgba(255, 255, 255, 0.9);
-  background: rgba(43, 147, 72, 0.8);
+  background: rgba(0, 145, 120, 0.8);
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 1rem 0;
 }
-.services-sub-hero-description {
-  color: var(--bg-primary);
-  max-width: 90vw;
-  font-size: 1.4rem;
-}
-.services-hero-title {
-  font-weight: 400;
-  font-size: 3rem;
-}
-.services-hero-container .business-logo {
-  max-width: 150px;
+.services .service-icon {
+  width: 50px;
+  height: 50px;
+  fill: var(--fg);
 }
 @media screen and (width >= 500px) {
   .services-hero-title {
     font-size: 4rem;
-  }
-  .services-hero-container {
-    /* padding-top: 3rem; */
-  }
-  .services-sub-hero-description {
-    font-size: 1.5rem;
   }
 }
 @media screen and (width >= 900px) {
@@ -66,11 +55,9 @@
   .services-hero-container {
     height: 100%;
     color: var(--bg-primary);
-    /* display: grid; */
     align-content: center;
     justify-items: center;
     row-gap: 0;
-    /* padding-top: 4rem; */
   }
   .services-hero-title-container {
     align-self: start;
@@ -90,12 +77,6 @@
     justify-self: start;
     margin-bottom: 0;
     font-size: 4rem;
-  }
-  .services-hero-description {
-    font-size: 1.4rem;
-  }
-  .services-sub-hero-description {
-    max-width: 80vw;
   }
 }
 
@@ -167,6 +148,7 @@
   background: var(--accent);
 }
 .service {
+  background: var(--bg-secondary);
   display: grid;
   align-content: center;
   max-width: 500px;
@@ -210,7 +192,6 @@
     margin: 0 !important;
     align-content: center;
     padding: 1rem !important;
-    /* transition: none !important; */
     border: var(--border-small) !important;
   }
 }
@@ -235,9 +216,8 @@
   align-items: center;
   margin-bottom: 2rem;
 }
-.services-stats-title,
-.services-stats-description {
-  color: var(--bg-primary);
+.stats .services-stats-title {
+  color: var(--white);
 }
 .services-stats-title {
   margin-bottom: 0;
@@ -246,7 +226,6 @@
   font-size: 2rem;
 }
 .stat {
-  color: var(--bg-primary);
   display: grid;
   grid-template-rows: auto auto 1fr;
   align-items: start;
@@ -254,11 +233,13 @@
   margin: 0 auto;
   margin-bottom: 2rem;
   text-align: center;
-  border: 2px solid var(--bg-primary);
+  border: 2px solid var(--white);
   padding: 1rem;
 }
-.stat-title {
-  color: var(--bg-primary);
+.stat-title,
+.stat-sub-title,
+.stat-description {
+  color: var(--white);
 }
 .stat-sub-title {
   font-weight: 400;
@@ -302,13 +283,13 @@
 /* Reviews */
 /* =================================== */
 .reviews {
-  background: var(--white);
+  background: var(--bg-primary);
 }
 .services-reviews-title {
   text-align: center;
 }
 .swiper-pagination-bullet {
-  background: var(--accent);
+  background: var(--fg);
   border-radius: 0;
   width: 12px;
   height: 12px;
@@ -322,6 +303,7 @@
   padding-bottom: 3rem;
 }
 .review {
+  background: var(--bg-secondary);
   display: grid;
   grid-template-rows: auto auto 1fr;
   width: 100%;

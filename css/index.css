@@ -49,33 +49,29 @@
   font-style: italic;
   font-size: 1rem;
 }
-.hero-btn-cta {
+.btn.hero-btn-cta {
   font-size: 1rem;
   font-weight: 500;
-  color: var(--fg);
+  color: var(--black);
   letter-spacing: var(--spacing);
-  background: var(--bg-primary);
-  padding: 1rem 0.5rem;
+  background: var(--white);
+  padding: 0.7rem 1rem;
   margin-top: 1rem;
   transition: var(--transition);
-  border-color: transparent;
+  border: none;
 }
-.hero-btn-cta:hover {
-  color: var(--bg-primary);
+.btn.hero-btn-cta:hover {
+  color: var(--white);
   background: var(--accent);
 }
 /* h-sub-hero */
 .h-sub-hero-container {
-  background: rgba(43, 147, 72, 0.8);
+  background: rgba(0, 145, 120, 0.8);
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 1rem 0;
-}
-.h-sub-hero-description {
-  max-width: 90vw;
-  color: var(--bg-primary);
 }
 @media screen and (width >= 500px) {
   .hero {
@@ -90,15 +86,12 @@
   .hero-description {
     font-size: 1.4rem;
   }
-  .hero-btn-cta {
+  .btn.hero-btn-cta {
     font-size: 2rem;
-    padding: 1rem 1.5rem;
+    padding: 0.7rem 1rem;
   }
   .h-sub-hero-container {
     padding: 2rem 0;
-  }
-  .h-sub-hero-description {
-    font-size: 1.5rem;
   }
 }
 @media screen and (width >= 900px) {
@@ -122,7 +115,7 @@
 /* H-ABOUT US */
 /* =================================== */
 .h-about {
-  background: var(--bg-primary);
+  background: var(--bg-secondary);
 }
 .h-about-container {
   min-height: 100vh;
@@ -134,11 +127,9 @@
   max-width: 9999px;
 }
 .h-about-content-title {
-  color: var(--fg);
-}
-.h-about-content-title {
   margin-bottom: 1rem;
   letter-spacing: 1px;
+  color: var(--fg);
 }
 .h-about-imgs-container {
   margin-top: 2.5rem;
@@ -194,9 +185,8 @@
 /* =================================== */
 /* H-Services */
 /* =================================== */
-.h-service-icon-container svg {
-  height: 45px;
-  width: 45px;
+.h-services {
+  background: var(--bg-primary);
 }
 .h-services-header {
   margin-bottom: 2.5rem;
@@ -214,6 +204,7 @@
   gap: 2rem;
 }
 .h-service {
+  background: var(--bg-secondary);
   display: grid;
   align-content: center;
   border: var(--border-small);
@@ -232,6 +223,11 @@
 .h-service-icon-container {
   margin-bottom: 0.5rem;
 }
+.h-service .h-service-icon {
+  width: 50px;
+  height: 50px;
+  fill: var(--fg);
+}
 @media screen and (width >= 900px) {
   .h-services-container {
     padding: 0;
@@ -246,14 +242,10 @@
     grid-template-rows: 1fr 1fr;
   }
   .h-services-header {
-    background: var(--white);
     align-self: center;
     justify-self: start;
-    padding-right: 1rem;
   }
   .h-service {
-    border: none;
-    background: var(--white);
     margin-bottom: 0;
     margin: 0;
     max-width: 9999px;
@@ -273,7 +265,10 @@
 /* H-Projects */
 /* =================================== */
 .h-projects {
-  background: var(--bg-primary);
+  background: var(--bg-secondary);
+}
+.h-projects-description {
+  color: var(--fg);
 }
 .swiper-slide {
   border: var(--border-large);
@@ -363,8 +358,14 @@
 /* =================================== */
 /* H-PARTNERS */
 /* =================================== */
+.h-partners {
+  background: var(--white);
+}
 .h-partners-header {
   text-align: center;
+}
+.h-partners-sub-title {
+  color: #333;
 }
 .h-partners-logos {
   display: grid;

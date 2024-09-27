@@ -22,31 +22,14 @@
 }
 .projects-sub-hero-container {
   width: 100%;
-  background: rgba(43, 147, 72, 0.8);
+  background: rgba(0, 145, 120, 0.8);
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 1rem 0;
 }
-.projects-sub-hero-description {
-  color: var(--bg-primary);
-  max-width: 90vw;
-  font-size: 1.4rem;
-}
-.projects-hero-title {
-  font-weight: 400;
-  font-size: 3rem;
-}
 .projects-hero-container .business-logo {
   max-width: 150px;
-}
-@media screen and (width >= 500px) {
-  .projects-hero-title {
-    font-size: 4rem;
-  }
-  .projects-sub-hero-description {
-    font-size: 1.5rem;
-  }
 }
 @media screen and (width >= 900px) {
   .projects-hero::before {
@@ -68,27 +51,10 @@
   .projects-hero-title-container {
     align-self: start;
   }
-  .projects-hero-title-container .business-logo {
-    max-width: 200px;
-  }
-  .projects-hero-title {
-    margin-bottom: 0;
-  }
 }
 @media screen and (width >= 1200px) {
   .projects-hero-container {
     max-width: 1200px;
-  }
-  .projects-hero-title {
-    justify-self: start;
-    margin-bottom: 0;
-    font-size: 4rem;
-  }
-  .projects-hero-description {
-    font-size: 1.4rem;
-  }
-  .projects-sub-hero-description {
-    max-width: 80vw;
   }
 }
 
@@ -145,7 +111,7 @@
   margin: 0 auto;
 }
 .projects {
-  background: var(--white);
+  background: var(--bg-primary);
 }
 .projects-title {
   text-align: center;
@@ -164,17 +130,11 @@
   padding: 1rem;
   margin: 2rem 0;
   margin-top: 2.5rem;
-  background: var(--white);
-  border: 2px solid var(--fg-2);
+  background: var(--bg-secondary);
+  border: var(--border-small);
 }
 .project:first-child {
   margin-top: 0;
-}
-.project-title {
-  letter-spacing: 1px;
-  color: var(--fg);
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
 }
 .project-show-details,
 .project-hide-details {
@@ -237,14 +197,14 @@
 .project-description span {
   font-weight: 700;
 }
+.project-detail {
+  color: var(--fg);
+}
 .project-img-container {
   width: 100%;
   position: relative;
-  border: var(--border-large);
+  border: var(--border-small);
   transition: var(--transition);
-}
-.project-img-container:hover {
-  border-color: var(--fg);
 }
 .project-img {
   width: 100%;
@@ -288,9 +248,6 @@
   .project-header {
     margin-bottom: 0;
   }
-  .project-title {
-    margin-bottom: 1rem;
-  }
   .project-details {
     min-width: 509px;
     max-width: 700px;
@@ -319,6 +276,7 @@
     width: 100%;
     max-width: 800px;
     height: 450px;
+    border: var(--border-large);
   }
   .project-img {
     width: 100%;

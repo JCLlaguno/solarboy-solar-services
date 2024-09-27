@@ -5,11 +5,9 @@ const body = document.body;
 // H-PROJECTS SLIDER
 new Swiper(".slides-wrapper", {
   // Optional parameters
-  // direction: "horizontal",
   loop: true,
   slidesPerView: 1,
   spaceBetween: 16,
-  // centeredSlides: true,
   simulateTouch: true,
 
   // Responsive breakpoints
@@ -24,7 +22,7 @@ new Swiper(".slides-wrapper", {
   autoplay: {
     delay: 5000,
   },
-  autoplay: false,
+  autoplay: true,
 
   pagination: {
     el: ".swiper-pagination",
@@ -147,7 +145,7 @@ const mobileLoadMore = () => {
       // display it, else hide it
       if (i <= numCards - 1) {
         // 8
-        service.style.border = "2px solid var(--fg-2)";
+        service.style.border = "var(--border-small)";
         service.style.padding = "1rem";
         service.style.height = "300px";
         service.style.marginBottom = "2rem";
@@ -297,23 +295,16 @@ loadCustomSelect();
 
 // SCROLL REVEAL ANIMATION
 const revealOnScroll = () => {
-  let delay = 0;
-  const addDelay = (el) => {
-    el.style.transitionDelay = `${delay}ms`;
-    delay += 200;
-  };
   // observer for all elements with .hidden class
   const options = {
     rootMargin: "-16px",
   };
-  const observer = new IntersectionObserver((entries, {}) => {
+  const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add("show");
-        addDelay(entry.target);
       } else {
         entry.target.classList.remove("show");
-        delay = 0;
       }
     });
   }, options);
@@ -358,22 +349,17 @@ projectsSmoothScroll();
 const backToTop = () => {
   // btn element
   const backToTopBtn = document.querySelector(".back-to-top");
-  const top = document.querySelector(".top");
-  const navbar = document.querySelector(".navbar");
 
   // function to show/hide back to top button
   // display back to top button when scrollTop value > 250
   const toggleBackToTop = () => {
-    document.documentElement.scrollTop >
-    top.getBoundingClientRect().height - navbar.getBoundingClientRect().height
+    document.documentElement.scrollTop > 200
       ? backToTopBtn.classList.add("show")
       : backToTopBtn.classList.remove("show");
   };
-
   // function to scroll to top of the page
   const scrollToTop = () =>
     body.scrollIntoView({ behavior: "smooth", block: "start" });
-
   // call the toggle function when page is scrolled 250px
   window.addEventListener("scroll", () => toggleBackToTop());
   // when button is clicked call the scroll function
@@ -381,31 +367,44 @@ const backToTop = () => {
 };
 backToTop();
 
+// ACTIVATE STICKY NAV ON SCROLL
 const stickyNav = () => {
   const navbar = document.querySelector(".navbar");
-  // const hero = document.querySelector(".hero");
-
-  //   const navHeight = navbar.getBoundingClientRect().height;
-  //   console.log(navHeight);
-
-  //   const sticky = function (entries) {
-  //     const [entry] = entries;
-  //     if (!entry.isIntersecting) {
-  //       navbar.classList.add("sticky");
-  //     } else {
-  //       navbar.classList.remove("sticky");
-  //     }
-  //   };
-
-  //   const observer = new IntersectionObserver(sticky, {
-  //     root: null,
-  //     threshold: 0,
-  //     rootMargin: `-${navHeight}px`,
-  //   });
-  //   observer.observe(hero);
-
   window.addEventListener("scroll", () =>
     navbar.classList.toggle("sticky", window.scrollY > 0)
   );
 };
 stickyNav();
+
+// =====================================================
+// LIGHT / DARK mode
+// =====================================================
+// 1. get the darkMode state, store in variable 'darkMode'
+let darkMode = localStorage.getItem("dark"); //
+// console.log("dark mode outside", darkMode);
+
+// 2. create function to enable/disable dark mode
+const enableDarkMode = () => {
+  localStorage.setItem("dark", "active");
+  body.classList.add("dark");
+};
+const disableDarkMode = () => {
+  localStorage.setItem("dark", null);
+  body.classList.remove("dark");
+};
+
+// 3. on reload, check if darkmode is enabled/disabled
+if (darkMode === "null") disableDarkMode();
+
+// 4. enable/disable dark mode when toggle is pressed
+const toggleBtnsArr = Array.from(document.querySelectorAll(".darkmode-toggle")); // store the elements on array
+
+// loop through each element, attach an event listener
+toggleBtnsArr.forEach((toggleBtn) => {
+  toggleBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    darkMode = localStorage.getItem("dark");
+    if (darkMode === "active") disableDarkMode();
+    else enableDarkMode();
+  });
+});

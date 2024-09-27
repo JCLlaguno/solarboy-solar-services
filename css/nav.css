@@ -6,7 +6,7 @@
   width: 100%;
   background: var(--bg-primary);
   z-index: 100;
-  border-bottom: 1px solid var(--accent);
+  border-bottom: 5px solid var(--accent);
 }
 .nav-header {
   padding: 0 1rem;
@@ -23,25 +23,59 @@
   justify-content: center;
   align-items: center;
 }
-.nav-logo {
+.nav-logo-container .nav-business-logo {
   height: 30px;
+  fill: var(--accent);
+  width: auto;
 }
-.nav-toggle-btn {
-  margin-top: 0;
+.mobile-nav-controls {
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+}
+.btn.nav-toggle-btn {
   display: grid;
   place-items: center;
   transition: var(--transition);
   background: none;
   border: none;
   color: var(--fg);
+  padding: 0;
+  margin-top: 0;
 }
-.nav-toggle-btn:hover {
+.btn.nav-toggle-btn:hover {
   color: var(--accent);
   background: none;
 }
 .nav-menu-icon {
   font-size: 2rem;
   font-weight: 500;
+}
+.header-darkmode-toggle {
+  width: 25px;
+  height: 25px;
+}
+.header-darkmode-toggle .icon-light {
+  fill: var(--fg);
+  display: none;
+}
+.header-darkmode-toggle .icon-dark {
+  fill: var(--fg);
+  display: block;
+}
+.dark .header-darkmode-toggle .icon-light {
+  display: block;
+}
+.dark .header-darkmode-toggle .icon-dark {
+  display: none;
+}
+.navbar .icon-light,
+.navbar .icon-dark {
+  transition: var(--transition);
+}
+.navbar .icon-light:hover,
+.navbar .icon-dark:hover {
+  fill: var(--accent);
 }
 /* nav-links */
 .nav-links {
@@ -69,20 +103,46 @@
 .nav-link-cta {
   display: none;
 }
+/* dark mode toggle on nav links */
+.nav-darkmode-toggle {
+  width: 30px;
+  height: 30px;
+  display: none;
+}
+.nav-darkmode-toggle .icon-light,
+.nav-darkmode-toggle .icon-dark {
+  fill: var(--white);
+}
+.nav-darkmode-toggle .icon-light {
+  display: none;
+}
+.nav-darkmode-toggle .icon-dark {
+  display: block;
+}
+.dark .nav-darkmode-toggle .icon-light {
+  display: block;
+}
+.dark .nav-darkmode-toggle .icon-dark {
+  display: none;
+}
 @media screen and (width >= 980px) {
   .navbar {
     background: transparent;
     box-shadow: none;
     overflow: hidden;
-    border: none;
     transition: var(--transition);
+    border: none;
+  }
+  .mobile-nav-controls {
+    display: none;
   }
   .nav-header {
     height: 6rem;
   }
-  .nav-logo {
+  .nav-logo-container .nav-business-logo {
+    height: 36px;
+    fill: var(--white);
     width: auto;
-    height: 38px;
   }
   .nav-link-cta {
     display: block;
@@ -122,25 +182,29 @@
     color: var(--accent);
     transition: var(--transition);
   }
-  .nav-btn-cta {
+  .nav-darkmode-toggle {
     display: block;
+  }
+  .btn.nav-btn-cta {
     margin-top: 0;
     margin-left: 1rem;
     font-size: 1rem;
     font-weight: 600;
-    padding: 0.6rem 0.6rem;
-    background: var(--bg-primary);
-    color: var(--fg);
-    border: 2px solid var(--bg-primary);
+    padding: 0.7rem 1rem;
+    background: var(--white);
+    color: var(--black);
+    border: none;
   }
-  .nav-btn-cta:hover {
-    color: var(--bg-primary);
-    border-color: var(--accent);
+  .btn.nav-btn-cta:hover {
     background: var(--accent);
+    color: var(--white);
   }
   .navbar.sticky {
     background: var(--bg-primary);
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid var(--nav-border-color);
+  }
+  .navbar.sticky .nav-logo-container .nav-business-logo {
+    fill: var(--accent);
   }
   .navbar.sticky .nav-link {
     color: var(--fg);
@@ -153,13 +217,27 @@
     color: var(--accent);
   }
   .navbar.sticky .nav-btn-cta {
-    background: var(--fg);
-    color: var(--bg-primary);
-    border: 2px solid var(--fg);
+    background: var(--black);
+    color: var(--white);
+  }
+  .dark .navbar.sticky .nav-btn-cta {
+    background: var(--white);
+    color: var(--black);
   }
   .navbar.sticky .nav-btn-cta:hover {
     background: var(--accent);
-    color: var(--bg-primary);
-    border: 2px solid var(--fg);
+    color: var(--white);
+  }
+  .navbar.sticky .nav-darkmode-toggle .icon-light,
+  .navbar.sticky .nav-darkmode-toggle .icon-dark {
+    fill: var(--black);
+  }
+  .dark .navbar.sticky .nav-darkmode-toggle .icon-light,
+  .dark .navbar.sticky .nav-darkmode-toggle .icon-dark {
+    fill: var(--white);
+  }
+  .navbar.sticky .nav-darkmode-toggle .icon-light:hover,
+  .navbar.sticky .nav-darkmode-toggle .icon-dark:hover {
+    fill: var(--accent);
   }
 }

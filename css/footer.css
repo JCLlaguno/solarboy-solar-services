@@ -2,7 +2,7 @@
 /* FOOTER */
 /* =================================== */
 .footer {
-  background: var(--bg-primary);
+  background: var(--bg-secondary);
 }
 .footer-container {
   min-height: calc(100vh - 4rem);
@@ -45,18 +45,22 @@
 .footer-cta-quote-now {
   text-align: left;
 }
-.footer-btn-cta {
+.btn.footer-btn-cta {
   width: 100%;
   background: var(--fg);
-  border: 2px solid var(--fg);
   color: var(--bg-primary);
+  border: none;
+}
+.btn.footer-btn-cta:hover {
+  color: var(--white);
+  background: var(--accent);
+}
+.dark .footer-btn-cta {
+  background: var(--white);
+  color: var(--black);
 }
 .footer-cta-title {
   font-weight: 400;
-}
-.footer-btn-cta:hover {
-  color: var(--bg-primary);
-  background: var(--accent);
 }
 .footer-copyright {
   background: var(--accent);
@@ -68,6 +72,9 @@
 }
 .footer-business-logo {
   display: none;
+}
+.footer-business-description {
+  color: var(--fg);
 }
 @media screen and (width >= 834px) {
   .footer-container {
@@ -90,6 +97,8 @@
   .footer-logo {
     margin-bottom: 1rem;
     width: 150px !important;
+    height: fit-content;
+    fill: var(--accent);
   }
   .footer-business-description {
     font-size: 1rem;

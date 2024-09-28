@@ -62,7 +62,7 @@
 /* Projects Gallery */
 /* =================================== */
 .gallery {
-  background: var(--bg-primary);
+  background: var(--bg-secondary);
 }
 .projects-gallery-header {
   margin-bottom: 2rem;
@@ -311,13 +311,10 @@
 .project-gallery-img-container .img-preview-overlay {
   opacity: 0;
 }
-.project-img-container:hover .img-preview-overlay {
+.project-img-container .img-preview-overlay {
   opacity: 1;
 }
 @media screen and (width >= 1150px) {
-  .project-img-container:hover .img-preview-overlay {
-    opacity: 1;
-  }
   .project-gallery-img-container:hover .img-preview-overlay {
     opacity: 1;
   }

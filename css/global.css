@@ -13,6 +13,7 @@
 :root {
   --ff: "Open Sans", sans-serif;
   --bg-primary: #faf9f6;
+  --bg-secondary: #fefefd;
   --fg: #2c2c2a;
   --fg-2: #3b3a38;
   --white: #faf9f6;
@@ -35,6 +36,22 @@
   --border-large: 5px solid var(--fg-2);
   --animation: fade 1s;
 }
+
+body.dark {
+  --bg-primary: #2c2c2a;
+  --bg-secondary: #3b3a38;
+  --fg: #faf9f6;
+  --fg-2: #fbfaf7;
+  --border-small: 1px solid transparent;
+  --border-large: 5px solid var(--fg-2);
+
+  /* scrollbars */
+  --scrollbar-color: var(--bg-secondary);
+  --scrollbar-bg: #222;
+
+  /* nav border-bottom */
+  --nav-border-color: #1c1c1c;
+}
 @keyframes fade {
   from {
     opacity: 0;
@@ -52,21 +69,6 @@ body {
   overflow-x: hidden;
   user-select: none;
   -webkit-tap-highlight-color: transparent;
-}
-body.dark {
-  --bg-primary: #2c2c2a;
-  --bg-secondary: #3b3a38;
-  --fg: #faf9f6;
-  --fg-2: #eee;
-  --border-small: 1px solid transparent;
-  --border-large: 5px solid var(--fg-2);
-
-  /* scrollbars */
-  --scrollbar-color: var(--bg-secondary);
-  --scrollbar-bg: #222;
-
-  /* nav border-bottom */
-  --nav-border-color: #1c1c1c;
 }
 body::-webkit-scrollbar {
   background: var(--scrollbar-bg);

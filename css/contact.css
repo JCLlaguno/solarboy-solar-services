@@ -127,7 +127,7 @@
 }
 
 /* custom dropdown */
-.dropdown {
+/* .dropdown {
   position: relative;
 }
 .select {
@@ -193,8 +193,106 @@
 }
 .menu-open {
   height: 170px;
-}
+} */
 /* end of custom dropdown */
+
+/* custom select option */
+/* The container must be positioned relative: */
+.custom-select {
+  position: relative;
+}
+
+.custom-select select {
+  display: none; /*hide original SELECT element: */
+}
+
+.select-selected {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--bg-primary);
+  color: var(--fg);
+  height: 54px;
+}
+
+/* Style the arrow inside the select element: */
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 15px;
+  right: 15px;
+  width: 10px;
+  height: 10px;
+  border-left: 2px solid var(--fg);
+  border-top: 2px solid var(--fg);
+  transform: rotate(-135deg) translate(-35%, -35%);
+}
+/* Point the arrow upwards when the select box is open (active): */
+.select-selected.select-arrow-active:after {
+  transform: rotate(45deg) translate(70%, 70%);
+}
+
+/* style the items (options), including the selected item: */
+.select-items div,
+.select-selected {
+  width: 100%;
+  color: var(--fg);
+  padding: 1rem 0.5rem;
+  border: var(--border-small);
+  cursor: pointer;
+}
+.select-items div {
+  border: none;
+}
+/* Style items (options): */
+.select-items {
+  position: absolute;
+  background: var(--bg-primary);
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  border: var(--border-small);
+  animation: fade 200ms;
+  border-top: none;
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.dark .select-items {
+  border: none;
+}
+/* Hide the items when the select box is closed: */
+.select-hide {
+  display: none;
+}
+.select-items div:hover,
+.same-as-selected {
+  background: var(--accent);
+  color: var(--white);
+  transition: var(--transition);
+}
+.select-items .same-as-selected {
+  background: #e1e0dd;
+  color: var(--fg);
+  transition: var(--transition);
+}
+.dark .select-items div:hover,
+.dark .same-as-selected {
+  background: var(--accent);
+  color: var(--white);
+}
+.dark .select-items .same-as-selected {
+  background: #353432;
+  color: var(--white);
+  transition: var(--transition);
+}
+/* end of custom select option */
 
 /* contact info */
 .contact-address {

@@ -248,48 +248,99 @@ const showHideDetails = () => {
 showHideDetails();
 
 const loadCustomSelect = () => {
-  // Get all dropdowns from the document
-  const dropdowns = document.querySelectorAll(".dropdown");
+  /* Look for any elements with the class "custom-select": */
+  const customSelectDiv = document.querySelector(".custom-select");
+  if (!customSelectDiv) return;
 
-  //   loop through all dropdown elements
-  dropdowns.forEach((dropdown) => {
-    // Get inner elements from each dropdown
-    const select = dropdown.querySelector(".select");
-    const caret = dropdown.querySelector(".caret");
-    const menu = dropdown.querySelector(".menu");
-    const options = dropdown.querySelectorAll(".menu li");
-    const selected = dropdown.querySelector(".selected");
+  // get first option element
+  const selElmnt = customSelectDiv.getElementsByTagName("select")[0]; // <option> inside <select>
+  const selElmntLength = selElmnt.length; // length of all <option>
+  // custom arrow
 
-    // Add a click event to the select element
-    select.addEventListener("click", () => {
-      // Add the clicked select styles to the select element
-      select.classList.toggle("select-clicked");
-      //   Add the rotate styles to the caret element
-      caret.classList.toggle("caret-rotate");
-      //   Add the open styles to the menu element
-      menu.classList.toggle("menu-open");
+  const selectArrow = document.querySelector(".custom-select .select-arrow");
+
+  // to study...down
+
+  /* For each element, create a new DIV that will act as the selected item: */
+  const selectedDiv = document.createElement("DIV");
+  selectedDiv.setAttribute("class", "select-selected");
+  selectedDiv.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+  customSelectDiv.appendChild(selectedDiv);
+
+  /* For each element, create a new DIV that will contain the option list: */
+  const optionListDiv = document.createElement("DIV");
+  optionListDiv.setAttribute("class", "select-items select-hide");
+
+  /* For each option in the original select element,
+        create a new DIV that will act as an option item: */
+  for (let j = 1; j < selElmntLength; j++) {
+    const optionItemDiv = document.createElement("DIV");
+    optionItemDiv.innerHTML = selElmnt.options[j].innerHTML;
+
+    /* When an item is clicked, update the original select box,
+          and the selected item: */
+    optionItemDiv.addEventListener("click", function () {
+      const selectEl =
+        this.parentNode.parentNode.getElementsByTagName("select")[0];
+      const selectElLength = selectEl.length;
+      const selectSelected = this.parentNode.previousSibling;
+
+      for (let i = 0; i < selectElLength; i++) {
+        if (selectEl.options[i].innerHTML == this.innerHTML) {
+          selectEl.selectedIndex = i;
+          selectSelected.innerHTML = this.innerHTML;
+          const sameAsSelected =
+            this.parentNode.getElementsByClassName("same-as-selected");
+          const sameAsSelectedLength = sameAsSelected.length;
+          for (let k = 0; k < sameAsSelectedLength; k++) {
+            sameAsSelected[k].removeAttribute("class");
+          }
+          this.setAttribute("class", "same-as-selected");
+          break;
+        }
+      }
+      selectSelected.click();
     });
-    //   Loop through all option elements
-    options.forEach((option) => {
-      // Add a click event to the option element
-      option.addEventListener("click", () => {
-        // Change selected inner text to clicked option inner text
-        selected.innerText = option.innerText;
-        //   Add clicked select styles to the select element
-        select.classList.remove("select-clicked");
-        // Add the rotate styles to the caret element
-        caret.classList.remove("caret-rotate");
-        // Add the open styles to the menu element
-        menu.classList.remove("menu-open");
-        // Remove active class from all option elements
-        options.forEach((option) => {
-          option.classList.remove("active");
-        });
-        // Add active class to clicked option element
-        option.classList.add("active");
-      });
-    });
+    optionListDiv.appendChild(optionItemDiv);
+  }
+  customSelectDiv.appendChild(optionListDiv);
+
+  /* When the select box is clicked, close any other select boxes,
+    and open/close the current select box: */
+  selectedDiv.addEventListener("click", function (e) {
+    e.stopPropagation();
+    closeAllSelect(this);
+    this.nextSibling.classList.toggle("select-hide");
+    this.classList.toggle("select-arrow-active");
   });
+
+  /* A function that will close all select boxes in the document,
+      except the current select box: */
+  function closeAllSelect(elmnt) {
+    let arrNo = [];
+    const selectItems = document.getElementsByClassName("select-items");
+    const selectSelected2 = document.getElementsByClassName("select-selected");
+    const selectItemsLength = selectItems.length;
+    let selectSelected2Length = selectSelected2.length;
+
+    for (let i = 0; i < selectSelected2Length; i++) {
+      if (elmnt == selectSelected2[i]) {
+        arrNo.push(i);
+      } else {
+        selectSelected2[i].classList.remove("select-arrow-active");
+      }
+    }
+
+    for (let i = 0; i < selectItemsLength; i++) {
+      if (arrNo.indexOf(i)) {
+        selectItems[i].classList.add("select-hide");
+      }
+    }
+  }
+
+  /* If the user clicks anywhere outside the select box,
+then close all select boxes: */
+  document.addEventListener("click", closeAllSelect);
 };
 loadCustomSelect();
 

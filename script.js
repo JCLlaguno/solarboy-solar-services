@@ -1,100 +1,106 @@
-"use strict";
+"use-strict";
 
 const body = document.body;
 
-// H-PROJECTS SLIDER
-new Swiper(".slides-wrapper", {
-  // Optional parameters
-  loop: true,
-  slidesPerView: 1,
-  spaceBetween: 16,
-  simulateTouch: true,
-
-  // Responsive breakpoints
-  breakpoints: {
-    900: {
-      slidesPerView: 2,
-    },
-    1200: {
-      slidesPerView: 3,
-    },
-  },
-  autoplay: {
-    delay: 5000,
-  },
-  autoplay: true,
-
-  pagination: {
-    el: ".swiper-pagination",
-    type: "bullets",
-    clickable: true,
-    dynamicBullets: true,
-  },
-
-  // Navigation arrows
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-});
-
-// slide preview
-const slidePreview = (targetEl, previewEl) => {
-  const closePreviewBtn = document.querySelector(".btn-close-preview");
-
-  const showPreview = (el, index) => {
-    if (!el[index]) return;
-    el[index].classList.add("show");
-    el[index].parentElement.classList.add("show-preview");
-    body.style.overflow = "hidden"; // hide scrollbar
-  };
-  const closePreview = (el, index) => {
-    if (!el[index]) return;
-    el[index].classList.remove("show");
-    el[index].parentElement.classList.remove("show-preview");
-    body.style.overflow = "visible"; // show scrollbar
-  };
-
-  targetEl.forEach((target, i) => {
-    // show preview when target is clicked
-    target.addEventListener("click", () => showPreview(previewEl, i));
-
-    // close preview
-    closePreviewBtn?.addEventListener("click", () =>
-      closePreview(previewEl, i)
-    );
-    // close preview when ESC is pressed
-    window.addEventListener("keydown", (e) => {
-      if (!e.key === "Escape") return;
-      closePreview(previewEl, i);
-    });
+// MOBILE NAV TOGGLE
+const loadMobileNavToggle = () => {
+  const navBtn = document.querySelector(".nav-toggle-btn");
+  const navLinks = document.querySelector(".nav-links");
+  navBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    if (navLinks.classList.contains("show-links")) {
+      navLinks.classList.remove("show-links");
+      navLinks.style.height = 0;
+    } else {
+      navLinks.classList.add("show-links");
+      navLinks.style.height = `${navLinks.scrollHeight}px`;
+    }
   });
 };
+loadMobileNavToggle();
 
-// home slide
-const slides = document.querySelectorAll(".swiper-slide");
-const previewElements = document.querySelectorAll(".slide-preview");
-// projects slide
-const projectImgs = document.querySelectorAll(".project-img-container");
-const previewElementsProjects = document.querySelectorAll(
-  ".project-img-preview"
-);
-slidePreview(slides, previewElements);
-slidePreview(projectImgs, previewElementsProjects);
+// SWIPER SLIDER
+const loadSlider = () => {
+  new Swiper(".slides-wrapper", {
+    // Optional parameters
+    loop: true,
+    slidesPerView: 1,
+    spaceBetween: 16,
+    simulateTouch: true,
 
-// NAV TOGGLE
-const navBtn = document.querySelector(".nav-toggle-btn");
-const navLinks = document.querySelector(".nav-links");
-navBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  if (navLinks.classList.contains("show-links")) {
-    navLinks.classList.remove("show-links");
-    navLinks.style.height = 0;
-  } else {
-    navLinks.classList.add("show-links");
-    navLinks.style.height = `${navLinks.scrollHeight}px`;
-  }
-});
+    // Responsive breakpoints
+    breakpoints: {
+      900: {
+        slidesPerView: 2,
+      },
+      1200: {
+        slidesPerView: 3,
+      },
+    },
+    autoplay: {
+      delay: 5000,
+    },
+    autoplay: true,
+
+    pagination: {
+      el: ".swiper-pagination",
+      type: "bullets",
+      clickable: true,
+      dynamicBullets: true,
+    },
+
+    // Navigation arrows
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+
+  // slide preview
+  const slidePreview = (targetEl, previewEl) => {
+    const closePreviewBtn = document.querySelector(".btn-close-preview");
+
+    const showPreview = (el, index) => {
+      if (!el[index]) return;
+      el[index].classList.add("show");
+      el[index].parentElement.classList.add("show-preview");
+      body.style.overflow = "hidden"; // hide scrollbar
+    };
+    const closePreview = (el, index) => {
+      if (!el[index]) return;
+      el[index].classList.remove("show");
+      el[index].parentElement.classList.remove("show-preview");
+      body.style.overflow = "visible"; // show scrollbar
+    };
+
+    targetEl.forEach((target, i) => {
+      // show preview when target is clicked
+      target.addEventListener("click", () => showPreview(previewEl, i));
+
+      // close preview
+      closePreviewBtn?.addEventListener("click", () =>
+        closePreview(previewEl, i)
+      );
+      // close preview when ESC is pressed
+      window.addEventListener("keydown", (e) => {
+        if (!e.key === "Escape") return;
+        closePreview(previewEl, i);
+      });
+    });
+  };
+
+  // home slide
+  const slides = document.querySelectorAll(".swiper-slide");
+  const previewElements = document.querySelectorAll(".slide-preview");
+  // projects slide
+  const projectImgs = document.querySelectorAll(".project-img-container");
+  const previewElementsProjects = document.querySelectorAll(
+    ".project-img-preview"
+  );
+  slidePreview(slides, previewElements);
+  slidePreview(projectImgs, previewElementsProjects);
+};
+loadSlider();
 
 // LOCATION MAP
 const loadMap = () => {
@@ -139,7 +145,6 @@ const mobileLoadMore = () => {
 
   // MAIN function to show services cards
   const showServices = (servicesList, numCards) => {
-    let delay = 0;
     servicesList.forEach((service, i) => {
       // if current index is less than or equal to numCards,
       // display it, else hide it
@@ -247,6 +252,7 @@ const showHideDetails = () => {
 };
 showHideDetails();
 
+// CUSTOM DROPDOWN ON CONTACTS PAGE
 const loadCustomSelect = () => {
   /* Look for any elements with the class "custom-select": */
   const customSelectDiv = document.querySelector(".custom-select");
@@ -255,11 +261,6 @@ const loadCustomSelect = () => {
   // get first option element
   const selElmnt = customSelectDiv.getElementsByTagName("select")[0]; // <option> inside <select>
   const selElmntLength = selElmnt.length; // length of all <option>
-  // custom arrow
-
-  const selectArrow = document.querySelector(".custom-select .select-arrow");
-
-  // to study...down
 
   /* For each element, create a new DIV that will act as the selected item: */
   const selectedDiv = document.createElement("DIV");
@@ -427,35 +428,52 @@ const stickyNav = () => {
 };
 stickyNav();
 
-// =====================================================
-// LIGHT / DARK mode
-// =====================================================
-// 1. get the darkMode state, store in variable 'darkMode'
-let darkMode = localStorage.getItem("dark"); //
-// console.log("dark mode outside", darkMode);
+// LIGHT / DARK MODE TOGGLE
+const loadDarkmodeToggle = () => {
+  // 1. get the darkMode state, store in variable 'darkMode'
+  let darkMode = localStorage.getItem("dark"); //
+  // console.log("dark mode outside", darkMode);
 
-// 2. create function to enable/disable dark mode
-const enableDarkMode = () => {
-  localStorage.setItem("dark", "active");
-  body.classList.add("dark");
-};
-const disableDarkMode = () => {
-  localStorage.setItem("dark", null);
-  body.classList.remove("dark");
-};
+  // 2. create function to enable/disable dark mode
+  const enableDarkMode = () => {
+    localStorage.setItem("dark", "active");
+    body.classList.add("dark");
+  };
+  const disableDarkMode = () => {
+    localStorage.setItem("dark", null);
+    body.classList.remove("dark");
+  };
 
-// 3. on reload, check if darkmode is enabled/disabled
-if (darkMode === "null") disableDarkMode();
+  // 3. on reload, check if darkmode is enabled/disabled
+  if (darkMode === "null") disableDarkMode();
 
-// 4. enable/disable dark mode when toggle is pressed
-const toggleBtnsArr = Array.from(document.querySelectorAll(".darkmode-toggle")); // store the elements on array
+  // 4. enable/disable dark mode when toggle is pressed
+  const toggleBtnsArr = Array.from(
+    document.querySelectorAll(".darkmode-toggle")
+  ); // store the elements on array
 
-// loop through each element, attach an event listener
-toggleBtnsArr.forEach((toggleBtn) => {
-  toggleBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    darkMode = localStorage.getItem("dark");
-    if (darkMode === "active") disableDarkMode();
-    else enableDarkMode();
+  // loop through each element, attach an event listener
+  toggleBtnsArr.forEach((toggleBtn) => {
+    toggleBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      darkMode = localStorage.getItem("dark");
+      if (darkMode === "active") disableDarkMode();
+      else enableDarkMode();
+    });
   });
-});
+};
+loadDarkmodeToggle();
+
+// SUB-HERO TYPING EFFECT
+const loadTypingEffect = () => {
+  const subHeroText = document.querySelector(".sub-hero-description");
+  const subHeroTextArr = Array.from(subHeroText.textContent);
+  let typedText = "";
+  subHeroTextArr.forEach((letter, i) => {
+    setTimeout(() => {
+      typedText += letter;
+      subHeroText.textContent = typedText;
+    }, i * 30);
+  });
+};
+loadTypingEffect();

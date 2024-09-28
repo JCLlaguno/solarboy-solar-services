@@ -26,7 +26,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1rem 0;
 }
 .contact-hero-container .business-logo {
   max-width: 150px;
@@ -78,10 +77,10 @@
   margin-bottom: 1.5rem;
 }
 .contact-form-btn {
+  display: block;
   width: 100%;
   background: var(--fg);
   color: var(--white);
-  border-color: transparent;
   padding: 1rem 0.5rem;
   font-size: 1rem;
   margin-top: 0;
@@ -89,7 +88,6 @@
 .contact-form-btn:hover {
   background: var(--accent);
   color: var(--bg-primary);
-  border-color: var(--fg);
 }
 .form-control {
   display: flex;
@@ -126,86 +124,15 @@
   color: var(--fg);
 }
 
-/* custom dropdown */
-/* .dropdown {
-  position: relative;
-}
-.select {
-  background: var(--bg-primary);
-  color: var(--fg);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border: var(--border-small);
-  padding: 1rem 0.5rem;
-  height: 54.4px;
-  cursor: pointer;
-}
-.select.select-clicked {
-  border-bottom: 2px solid transparent;
-}
-.caret {
-  width: 30px;
-  height: 30px;
-  transform: rotate(-90deg);
-}
-.caret-rotate {
-  transform: rotate(90deg);
-}
-.contact-select-btn {
-  fill: var(--fg);
-}
-.menu {
-  border: var(--border-small);
-  border-top: none;
-  border-bottom: none;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  color: var(--fg);
-  position: absolute;
-  top: 3.2rem;
-  left: 50%;
-  width: 100%;
-  transform: translateX(-50%);
-  overflow: hidden;
-  height: 0;
-  transition: height 200ms;
-  z-index: 9;
-}
-.dark .menu {
-  border: none;
-}
-.menu li {
-  background: var(--bg-primary);
-  padding: 1rem 0.5rem;
-  cursor: pointer;
-  color: var(--fg);
-  transition: var(--transition);
-}
-.menu li:hover {
-  background: var(--accent);
-  color: var(--white);
-}
-.menu.menu-open {
-  border-bottom: var(--border-small);
-}
-.dark .menu.menu-open {
-  border: none;
-}
-.menu-open {
-  height: 170px;
-} */
-/* end of custom dropdown */
-
 /* custom select option */
 /* The container must be positioned relative: */
 .custom-select {
   position: relative;
+  width: 100%;
 }
-
 .custom-select select {
   display: none; /*hide original SELECT element: */
 }
-
 .select-selected {
   display: flex;
   justify-content: space-between;
@@ -214,7 +141,6 @@
   color: var(--fg);
   height: 54px;
 }
-
 /* Style the arrow inside the select element: */
 .select-selected:after {
   position: absolute;
@@ -231,7 +157,6 @@
 .select-selected.select-arrow-active:after {
   transform: rotate(45deg) translate(70%, 70%);
 }
-
 /* style the items (options), including the selected item: */
 .select-items div,
 .select-selected {
@@ -253,6 +178,7 @@
   right: 0;
   z-index: 99;
   border: var(--border-small);
+  border-top: none;
   animation: fade 200ms;
   border-top: none;
 }

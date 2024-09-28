@@ -106,6 +106,7 @@ a {
 }
 .dark .btn {
   background: var(--accent);
+  border: none;
 }
 .dark .btn:hover {
   background: var(--white);
@@ -178,13 +179,14 @@ h3 {
 }
 .sub-hero-description {
   color: var(--white);
+  font-weight: 300;
   max-width: 90vw;
   font-size: 1.4rem;
   letter-spacing: var(--content-spacing);
 }
 @media screen and (width >= 500px) {
   .sub-hero-description {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
 }
 @media screen and (width >= 1200px) {
@@ -271,7 +273,6 @@ h3 {
   display: grid;
   place-items: center;
   transition: var(--transition);
-  opacity: 0;
   cursor: pointer;
 }
 .overlay-text {

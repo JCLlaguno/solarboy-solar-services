@@ -88,7 +88,7 @@
 }
 .nav-link {
   padding: 1rem;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: 500;
   transition: var(--transition);
 }
@@ -239,5 +239,10 @@
   .navbar.sticky .nav-darkmode-toggle .icon-light:hover,
   .navbar.sticky .nav-darkmode-toggle .icon-dark:hover {
     fill: var(--accent);
+  }
+}
+@media screen and (width >= 1060px) {
+  .nav-link {
+    font-size: 1.4rem;
   }
 }

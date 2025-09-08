@@ -17,7 +17,7 @@
   grid-template-rows: 1fr minmax(20vh, auto);
   padding-top: 4rem;
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url("../img/h-about-img-2.jpg") center/cover no-repeat;
+    url("../img/h-about-img-2.webp") center/cover no-repeat;
 }
 .services-hero-container {
   color: var(--bg-primary);
@@ -254,7 +254,7 @@
 @media screen and (width >= 900px) {
   .stats {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-      url("../img/bg-stats.jpg") center/cover no-repeat fixed;
+      url("../img/bg-stats.webp") center/cover no-repeat fixed;
   }
   .services-stats {
     display: grid;

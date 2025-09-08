@@ -13,7 +13,7 @@
   grid-template-rows: 1fr minmax(20vh, auto);
   padding-top: 4rem;
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url("../img/contact.jpg") center/cover no-repeat;
+    url("../img/contact.webp") center/cover no-repeat;
 }
 .contact-hero-container {
   color: var(--bg-primary);

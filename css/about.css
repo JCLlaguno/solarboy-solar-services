@@ -12,7 +12,7 @@
   grid-template-rows: 1fr minmax(20vh, auto);
   padding-top: 4rem;
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url("../img/h-about-img.jpg") center/cover no-repeat;
+    url("../img/h-about-img.webp") center/cover no-repeat;
 }
 .about-hero-container {
   color: var(--bg-primary);
